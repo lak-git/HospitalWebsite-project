@@ -20,6 +20,10 @@ section{padding-bottom: 3vh;}
     width: 45%;
     text-align: center
 }
+.title-container > img{
+    width: 52%;
+    box-shadow: 0 0 1.5vh var(--content-blue);
+}
 
 
 .branch-container{
@@ -98,10 +102,11 @@ tfoot td {
     .branch-container > iframe{width: 100%;}
     .branch-container > p{width: 100%;}
 
+    .title-container > img{width: 100%;}
+
     table{border: 0;}
     table,tbody{display: block;}
 
-    /* thead{display: none;} */
     #services{display: none;}
     thead > tr > th{
         width: 50vw

@@ -1,0 +1,5 @@
+article{margin-bottom: 3vh;}
+
+article[name="details"] > p{font-weight: 500;}
+
+ul li{margin-bottom: 1rem;}

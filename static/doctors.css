@@ -1,0 +1,72 @@
+:root{
+    --shadow-blue: #17255a;
+    --content-bg: #fafafa;
+}
+
+
+
+section[name="doctors-grid"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1vw;
+    padding: 2vw 0;
+    background-color: var(--content-bg);
+}
+
+.doctor-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2vw 0;
+    transition: all 0.35s ease;
+}
+.doctor-container:hover{
+    box-shadow: 0 0 1.5vh var(--shadow-blue);
+    transform: scale(1.015);
+    border-radius: 0.5vw;
+}
+
+.doctor-container > h2{
+    margin-bottom: 0;
+    text-align: center;
+    padding: 0 4vw;
+}
+
+.doctor-container > p{
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0 4vw;
+}
+
+
+.description{display: none;}
+.doctor-container:hover{
+    animation-name: dtrans;
+    animation-duration: 1.4s;
+/* complete this */
+}
+
+
+
+@keyframes dtrans {
+    from{
+        display: none;
+    }
+    to{
+        display: block;
+        background-color: black;
+    }
+}
+
+
+@media screen and (max-width:630px) {
+    section[name="doctors-grid"] {
+        grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
+        gap: 10px;
+    }
+    
+    .doctor-container > img{
+        max-width: 40vw;
+    }
+}

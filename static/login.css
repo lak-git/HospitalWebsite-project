@@ -1,0 +1,22 @@
+:root{
+    --text: #21273D;
+    --border: #cccccc;
+}
+
+
+
+input[type="password"]{
+    width: 95%;
+    padding: 1.5vh;
+    margin-top: 1vh;
+    margin-bottom: 3vh;
+    border-radius: 5px;
+    border: 2px solid var(--border);
+}
+
+
+form  a{text-decoration: none;}
+form a:hover{
+    text-decoration: underline;
+    color: var(--text);
+}

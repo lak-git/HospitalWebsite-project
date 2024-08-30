@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta name='description' content='Welcome to Colebrooke Hospital, where we are committed to providing exceptional healthcare services to our community. Our team of dedicated professionals is here to ensure you receive the highest quality care in a compassionate and supportive environment.'>
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="static/main.css">
+    <link rel="stylesheet" href="static/form.css">
+    <link rel="stylesheet" href="static/feedback.css">
+    <link rel="stylesheet" media="screen and (min-width:431px) and (max-width:880px)" href="static/tablet.css">
+    <link rel="stylesheet" media="screen and (max-width:430px)" href="static/mobile.css">
+    <!-- Page title -->
+    <link rel="shortcut icon" href="static/images/icons/favicon.svg" type="image/x-icon">
+    <title>Colebrooke Hospital|Feedback</title>
+</head>
+
+<body>
+<header>
+    <div class="logo-container">
+        <a href="index.html">
+        <!-- Visible only in mobile phones -->
+        <img src="static/images/icons/logo_mobile.svg" alt="Hospital logo" id="mobile-logo">
+        <!-- Normal logo for desktop and tablets -->
+        <img src="static/images/icons/logo.svg" alt="Hospital logo" id="logo">
+        </a>
+    </div>
+    <nav>
+        <div class="nav-left">
+            <a href="login.html">LogIn / SignUp</a>
+        </div>
+        <div class="nav-center">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="appointments.html">Appointments</a>
+                <a href="services.html">Services</a>
+                <a href="pharmacy.html">Pharmacy</a>
+                <a href="doctors.html">Doctors</a>
+                <a href="feedback.html">Feedback</a>
+        </div>
+        <div class="nav-right">
+            <a href="#">Language</a>
+        </div>
+
+        <!-- Visible only in mobile devices -->
+        <div class="nav-center-mobile" id="nav-mobile">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="services.html">Services</a>
+            <a href="pharmacy.html">Pharmacy</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="feedback.html">Feedback</a>
+    </div>
+    </nav>
+</header>    
+
+<main>
+    <section name="feedback-intro">
+        <h1>We Value Your Feedback</h1>
+        <p>
+            Your feedback is important to us as we strive to improve our services. Please fill out the form below to share your thoughts or lodge a complaint.
+        </p>
+    </section>
+
+    <section name="feedback-form" class="form-container">
+        <form action="#" method="post">
+            <fieldset>
+                <legend><h2>Quick Feedback</h2></legend>
+                
+                <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+
+                <label for="contact">Contact Number:</label>
+                    <input type="tel" id="contact" name="contact" maxlength="10" minlength="10" required>
+
+                <label for="message">Your Feedback:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>  
+            </fieldset>
+            
+            <div class="button-container">
+                <button type="submit">Submit</button>   <button type="reset">Reset</button>
+            </div>
+        </form>
+    </section>
+
+    <section name="complaints">
+        
+        <article name="description">
+            <h2>Concerns and Complaints</h2>
+            <p>
+                At Colebrooke Hospital, we greatly value your feedback. While we appreciate hearing about the things we do well, we also want to know how we can improve. We are committed to delivering the highest standards of care, but we recognize that sometimes mistakes can occur. When they do, it's essential that we address them promptly and learn from them to prevent future occurrences. Your input helps us continually enhance our services and ensures that we provide the best possible care to all our patients.
+            </p>
+        </article>
+        <article name="details">
+            <h3>For formal complaints, please put your complaint in writing to:</h3>
+            <p>
+                Chief Executive Officer <br>
+                Lorem ipsum dolor sit. <br>
+                Lorem, ipsum dolor. <br>
+                Lorem, ipsum.
+            </p>
+            <p>
+                Email: <a href="mailto:complaints@colebrookehospital.lk">complaints@colebrookehospital.lk</a>
+            </p>
+        </article>
+        <article name="next">
+            <h2>What happens next</h2>
+            <ul>
+                <li>We take every complaint seriously and conduct a thorough investigation. Our team will respond to you as promptly as possible, and we may reach out to discuss your concerns in more detail when we receive your complaint.</li>
+                <li>You will receive formal acknowledgment of your complaint within three working days.</li>
+                <li>In our reply, we will explain the actions we are taking to ensure that the issue you raised does not occur again.</li>
+                <li>Rest assured, your treatment will not be affected by your decision to file a complaint, and your complaint will not be recorded in your medical notes.</li>
+            </ul>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-inner">
+            <div class="footer-box">
+                <p id="contact">Contact Details:</p>
+                <p>Lorem ipsum dolor sit. <br>
+                    Lorem, ipsum. <br>
+                    Lorem, ipsum dolor.
+                </p>
+            </div>
+            <div class="footer-box">
+                <a href="appointments.html">Get an Appointment</a>
+                <a href="pharmacy.html">Get Medicine</a>
+            </div>
+        </div>
+        <div class="footer-inner">
+            <div class="footer-box">
+                <a href="services.html">Our Services</a>
+                <a href="doctors.html">Our Doctors</a>
+            </div>
+            <div class="footer-box">
+                <a href="about.html">About Us</a>
+                <a href="feedback.html">Feedback</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-box" id="footer-logo">
+        <a href="index.html"><img src="static/images/icons/logo_footer.svg" alt="Footer logo"></a>
+    </div>
+    <p>&copy; 2024 Colebrooke Hospital. All rights reserved.</p>
+</footer>
+</body>
+
+</html>

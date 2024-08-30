@@ -1,0 +1,10 @@
+label[for="consultation-type"]{margin: 15px 0;}
+
+label.inline{
+    display: inline;
+    margin: 0 10%;
+}
+
+label[for="reason"]{margin-top: 15px;}
+
+ul li{margin: 10px 0;}

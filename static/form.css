@@ -1,0 +1,85 @@
+:root{
+    --main-blue: #052AAD;
+    --footer-blue: #21273D;
+    --text: #21273D;
+    --button-blue: #011d8e;
+    --content-bg: #fafafa;
+    --border: #cccccc;
+}
+
+
+
+.form-container > h2{padding-left: 8%;}
+
+
+form {
+    max-width: 65%;
+    margin: auto;
+}
+
+fieldset{
+    width: 100%;
+    background-color: var(--content-bg)
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+label.inline{
+    display: inline;
+    margin: 0 10%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select, textarea {
+    width: 95%;
+    padding: 1.5vh;
+    margin-top: 1vh;
+    border-radius: 5px;
+    border: 2px solid var(--border);
+}
+
+button[type="submit"], button[type="reset"] {
+    font-size: larger;
+    padding: 1.5vh 3vw;
+    border: none;
+    border-radius: 5px;
+    margin: 3vh 0;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background-color: var(--main-blue);
+    color: white;
+}
+
+button[type="submit"]:hover, button[type="reset"]:hover {
+    color: white;
+    background-color: var(--footer-blue);
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+@media screen and (max-width:430px) {
+    form{
+        max-width: 90%;
+        margin: 0;
+    }
+
+    .form-container > h2{
+        text-align: center;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    .button-container{justify-content: space-between;}
+    
+}

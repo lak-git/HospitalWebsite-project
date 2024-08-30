@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root{
+    --box-color: #1835a0f8;
+}
+
+
+
+#hero-image{
+    background-size: 85vw;
+    background-image: url(images/homepage-hero.jpg);
+    opacity: 1;
+    max-width: 85vw;
+    height: auto;
+}
+#hero-image:hover{
+    background-image: url(images/homepage-hero-alt.jpg);
+    box-shadow: 0 0 1vh black;
+    transition: all 0.5s ease;
+}
+.hero-container > .bold{
+    padding-top: 10px;
+}
+#mobile-hero-image{display:none;}
+
+.list-container{
+    display: flex;  
+    width: 100%;
+    height: auto;
+    background-color: var(--box-color);
+    color: white;
+    border-radius: 8px;
+    font-weight: 500;
+}
+.list-container ul li{
+    width: 45%;
+    margin: 1vh 1vh;
+    float: left;
+}
+.list-container ol li{
+    margin: 3vh 0;
+}
+
+section[name="more-info"] > .title-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+section[name="thank-you"]{
+    text-align: center;
+}
+
+/* For mobile and tablet screens */
+@media screen and (max-width:880px){
+    section[name="more-info"] h2, article[name="contact"]{
+        text-align: center;
+    }
+}
+/* Mobile phones only */
+@media screen and (max-width:430px) {
+    #hero-image{display: none;}
+
+    #mobile-hero-image{
+        display: block;
+        width: 100vw;
+        height: auto;
+    }
+
+    main > section img{
+        width: 92.5vw;
+    }
+}

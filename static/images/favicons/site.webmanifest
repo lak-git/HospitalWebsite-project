@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Colebrooke Hospital App",
+    "short_name": "Colebrooke Hospital",
     "icons": [
         {
             "src": "https://lak-git.github.io/HospitalWebsite-project/static/images/favicons/android-chrome-192x192.png",
@@ -13,6 +13,7 @@
             "type": "image/png"
         }
     ],
+    "start_url": "/index.html",
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"

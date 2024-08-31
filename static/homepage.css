@@ -46,6 +46,11 @@ section[name="more-info"] > .title-container{
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+section[name="more-info"] h2{
+    max-width: 37.5vw;
+    font-size: 2.75vw;
+    text-align: center;
+}
 
 section[name="thank-you"]{
     text-align: center;

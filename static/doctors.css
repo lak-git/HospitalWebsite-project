@@ -30,17 +30,20 @@ section[name="doctors-grid"] {
 .doctor-container > h2{
     margin-bottom: 0;
     text-align: center;
-    padding: 0 4vw;
+    padding: 0 1rem;
 }
 
 .doctor-container > .title, .description{
     font-weight: 600;
     text-align: center;
     margin-bottom: 0;
-    padding: 0 4vw;
+    padding: 0 2rem;
 }
 
-.doctor-container > img{max-height: 200px;}
+.doctor-container > img{
+    max-height: 200px;
+    border-radius: 45%;
+}
 
 
 .description{

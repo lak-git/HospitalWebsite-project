@@ -21,7 +21,9 @@
 .hero-container > .bold{
     padding-top: 10px;
 }
+
 #mobile-hero-image{display:none;}
+
 
 .list-container{
     display: flex;  
@@ -41,6 +43,8 @@
     margin: 3vh 0;
 }
 
+
+section[name="more-info"]{margin-top: 7.5vh;}
 section[name="more-info"] > .title-container{
     display: flex;
     justify-content: space-evenly;
@@ -52,16 +56,20 @@ section[name="more-info"] h2{
     text-align: center;
 }
 
-section[name="thank-you"]{
-    text-align: center;
-}
+section[name="thank-you"]{text-align: center;}
+
+
 
 /* For mobile and tablet screens */
 @media screen and (max-width:880px){
-    section[name="more-info"] h2, article[name="contact"]{
-        text-align: center;
+    article[name="contact"]{text-align: center;}
+
+    section[name="more-info"] h2{
+        max-width: 100%;
+        font-size: x-large;
     }
 }
+
 /* Mobile phones only */
 @media screen and (max-width:430px) {
     #hero-image{display: none;}
@@ -72,7 +80,5 @@ section[name="thank-you"]{
         height: auto;
     }
 
-    main > section img{
-        width: 92.5vw;
-    }
+    main > section img{width: 92.5vw;}
 }

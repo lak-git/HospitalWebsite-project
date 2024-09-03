@@ -1,10 +1,3 @@
-:root{
-    --shadow-blue: #17255a;
-    --content-bg: #fafafa;
-}
-
-
-
 section[name="doctors-grid"] {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -26,6 +19,9 @@ section[name="doctors-grid"] {
     transform: scale(1.0175);
     border-radius: 0.5vw;
 }
+.doctor-container:hover ~ .doctor-container, .doctor-container:has(~ .doctor-container:hover) {
+    transform: scale(0.95);
+}
 
 .doctor-container > h2{
     margin-bottom: 0;
@@ -42,7 +38,7 @@ section[name="doctors-grid"] {
 
 .doctor-container > img{
     max-height: 200px;
-    border-radius: 45%;
+    border-radius: 48%;
 }
 
 
@@ -66,3 +62,10 @@ section[name="doctors-grid"] {
         max-width: 40vw;
     }
 }
+
+
+
+
+/* References:
+MDN Docs | :has() - CSS | Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/:has | Accessed: 2 September 2024 
+ */

@@ -1,21 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-:root{
-    --box-color: #1835a0f8;
-}
-
 
 
 #hero-image{
     background-size: 85vw;
-    background-image: url(images/homepage-hero.jpg);
+    background-image: url(images/homepage-hero.webp);
     opacity: 1;
     max-width: 85vw;
     height: auto;
     transition: all 0.5s ease;
 }
 #hero-image:hover{
-    background-image: url(images/homepage-hero-alt.jpg);
+    background-image: url(images/homepage-hero-alt.webp);
     box-shadow: 0 0 2vh var(--box-color);
 }
 .hero-container > .bold{
@@ -45,16 +41,27 @@
 
 
 section[name="more-info"]{margin-top: 7.5vh;}
+
 section[name="more-info"] > .title-container{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    padding: 3vh;
 }
-section[name="more-info"] h2{
+
+.title-container h2{
     max-width: 37.5vw;
     font-size: 2.75vw;
     text-align: center;
 }
+
+.title-container img{
+    max-width: 40vw;
+    border: var(--main-blue) solid 5px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
 
 section[name="thank-you"]{text-align: center;}
 
@@ -68,6 +75,11 @@ section[name="thank-you"]{text-align: center;}
         max-width: 100%;
         font-size: x-large;
     }
+
+    .title-container img{
+        width: 85%;
+        max-width: none;
+    }
 }
 
 /* Mobile phones only */
@@ -80,5 +92,8 @@ section[name="thank-you"]{text-align: center;}
         height: auto;
     }
 
-    main > section img{width: 92.5vw;}
+    .title-container img{
+        width: 100%;
+        overflow: hidden;
+    }
 }

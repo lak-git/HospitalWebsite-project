@@ -1,12 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 :root{
-    --main-blue: #052AAD;
-    --footer-blue: #21273D;
-    --text: #21273D;
-    --header-blue: #003366;
     --backdrop: #f4f4f4;
+    --border: #cccccc;
+    --box-color: #1835a0f8;
+    --button-blue: #011d8e;
+    --content-blue: #1d3daf;
+    --content-bg: #fafafa;
+    --footer-blue: #21273D;
+    --footer-line: #323F6A; 
+    --header-blue: #003366;
+    --main-blue: #052AAD;
+    --shadow-blue: #17255a;
+    --text: #21273D;
+    --table-border: #c7c7c7;
 }
+
+
 
 /* Scroll bar */
 ::-webkit-scrollbar {

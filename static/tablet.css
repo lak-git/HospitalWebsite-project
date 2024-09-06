@@ -56,11 +56,13 @@ nav{
     border-bottom: var(--footer-line) solid 2.5px;
 }
 
-.footer-box > a{
+.footer-box a{
     display: flex;
     justify-content: center;
     margin: 1.5vh 0;
 }
+.underline-effect a:hover{text-decoration: underline;}
+.underline-effect a::after{display: none;}
 
 #footer-logo{
     display: block;

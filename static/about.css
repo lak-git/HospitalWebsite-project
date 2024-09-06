@@ -31,6 +31,7 @@ section{padding-bottom: 3vh;}
 
 .branch-container > p{
     margin-top: 2vh;
+    padding-inline: 0;
     width: 45%;
 }
 .branch-container > iframe{

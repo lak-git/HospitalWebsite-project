@@ -17,7 +17,7 @@ section[name="doctors-grid"] {
     box-shadow: 0 0 1.5vh var(--shadow-blue);
     background-color: rgba(0, 21, 255, 0.048);
     transform: scale(1.0175);
-    border-radius: 0.5vw;
+    border-radius: 30px;
 }
 .doctor-container:hover ~ .doctor-container, .doctor-container:has(~ .doctor-container:hover) {
     transform: scale(0.95);
@@ -44,7 +44,8 @@ section[name="doctors-grid"] {
 
 .description{
     display: none;
-    padding: 0;
+    padding: 0.5rem;
+    font-size: 10pt;
 }
 .doctor-container:hover .description{
     display: block;
@@ -61,6 +62,8 @@ section[name="doctors-grid"] {
     .doctor-container > img{
         max-width: 40vw;
     }
+
+    .doctor-container > .title {padding: 0;}
 }
 
 

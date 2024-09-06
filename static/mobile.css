@@ -41,6 +41,9 @@ main img{
     object-fit: contain;
 }
 main section{padding: 0 10px;}
+main section p{
+    padding-inline: 2vh;
+}
 
 
 h1{font-size: x-large;}

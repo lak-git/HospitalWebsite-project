@@ -4,8 +4,10 @@ section{padding-bottom: 3vh;}
 .title-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    border-radius: 5vh 5vh 0 0;
+    background-color: var(--content-bg);
 }
 
 .title-container > h2{
@@ -15,7 +17,7 @@ section{padding-bottom: 3vh;}
 }
 .title-container > img{
     width: 52%;
-    box-shadow: 0 0 1.5vh var(--content-blue);
+    border-top-right-radius: 5vh;
 }
 
 
@@ -23,10 +25,10 @@ section{padding-bottom: 3vh;}
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: var(--content-blue);
-    color: white;
     font-weight: 450;
     padding: 3vh;
+    background-color: var(--content-blue);
+    color: white;
 }
 
 .branch-container > p{
@@ -46,23 +48,26 @@ section{padding-bottom: 3vh;}
 .link-container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: var(--content-blue);
     padding: 3vh 0;
     margin-bottom: 5vh;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 0 0 5vh 5vh;
+    background-color: var(--content-blue);
 }
 
 .link-container > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     text-decoration: none;
     color: white;
     font-size: 14.5pt;
     font-weight: 550;
     margin-left: 3vw;
 }
-.link-container > a:hover{text-decoration: underline;}
-.link-container > img{width: 7.5vh;}
+.link-container img{
+    margin-right: 1vh;
+    width: 7.5vh;}
 
 
 table {
@@ -96,19 +101,24 @@ tfoot td {
         width: 100%;
         font-size: 21pt;
     }
-    .title-container > img{width: 100%;}
+    .title-container > img{
+        width: 100%;
+        border-top-right-radius: 0;
+    }
+
+    .branch-container > iframe{width: 100%;}
+    .branch-container > p{width: 100%;}
 }
 
 /* Mobile only */
 @media screen and (max-width:430px) {
+    .title-container{border-radius: 3vh 3vh 0 0;}
     .title-container > h2{
         width: 100%;
         font-size: x-large;
     }
 
-    .branch-container > iframe{width: 100%;}
-    .branch-container > p{width: 100%;}
-
+    .link-container{border-radius: 0 0 3vh 3vh;}
 
     table{border: 0;}
     table,tbody{display: block;}

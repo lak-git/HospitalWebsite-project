@@ -8,7 +8,8 @@ form {
 
 fieldset{
     width: 100%;
-    background-color: var(--content-bg)
+    background-color: var(--content-bg);
+    border-radius: 22.5px;
 }
 
 label {
@@ -33,27 +34,29 @@ select, textarea {
     border: 2px solid var(--border);
 }
 
-button[type="submit"], button[type="reset"] {
+.button-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button{
+    font-family: 'Montserrat';
     font-size: larger;
-    padding: 1.5vh 3vw;
+    padding: 1.5vh 4vw;
     border: none;
-    border-radius: 5px;
+    border-radius: 30vw;
     margin: 3vh 0;
     transition: all 0.4s ease;
     cursor: pointer;
     background-color: var(--main-blue);
     color: white;
 }
-
-button[type="submit"]:hover, button[type="reset"]:hover {
-    color: white;
+button:hover {
     background-color: var(--footer-blue);
 }
 
-.button-container{
-    display: flex;
-    justify-content: space-evenly;
-}
+button.full{width: 50%;}
+
 
 ul li{margin: 10px 0;}
 
@@ -71,6 +74,10 @@ ul li{margin: 10px 0;}
         width: 100%;
     }
 
-    .button-container{justify-content: space-between;}
+    .button-container{
+        width: 90vw;
+        justify-content: space-between;}
+
+    button{padding: 1.75vh 3vh;}
     
 }

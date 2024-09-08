@@ -2,6 +2,7 @@ section[name="services-list"]{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: var(--content-bg);
 }
 
 
@@ -12,7 +13,7 @@ section[name="services-list"]{
     width: 45%;
     padding: 1vw;
     margin: 2.5vh 0;
-    border-radius: 10%;
+    border-radius: 5vw;
     background-color: var(--content-blue);
     transition: all 0.35s ease;
 }

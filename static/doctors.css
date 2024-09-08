@@ -59,10 +59,8 @@ section[name="doctors-grid"] {
         gap: 10px;
     }
     
-    .doctor-container > img{
-        max-width: 40vw;
-    }
-
+    .doctor-container{margin-inline: 8px;}
+    .doctor-container > img{max-width: 40vw;}
     .doctor-container > .title {padding: 0;}
 }
 

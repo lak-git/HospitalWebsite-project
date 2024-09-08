@@ -99,4 +99,7 @@ section[name="thank-you"]{text-align: center;}
         width: 100%;
         overflow: hidden;
     }
+
+
+    .list-container ul li{width: 92%;}
 }

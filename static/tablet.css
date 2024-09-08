@@ -52,15 +52,18 @@ nav{
 
 .footer-inner{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     border-bottom: var(--footer-line) solid 2.5px;
 }
+
+.footer-box{min-width: 30vw;}
 
 .footer-box a{
     display: flex;
     justify-content: center;
     margin: 1.5vh 0;
 }
+
 .underline-effect a:hover{text-decoration: underline;}
 .underline-effect a::after{display: none;}
 

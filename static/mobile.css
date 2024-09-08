@@ -55,6 +55,12 @@ section[name="thank-you"] > p{
 }
 
 
+.footer-innter{justify-content: space-evenly;}
+
+.footer-box{
+    margin: 0 3vw;
+    min-width: 40vw;
+}
 
 .footer-box img{
     width: 37.5vw;

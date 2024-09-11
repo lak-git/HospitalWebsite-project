@@ -207,7 +207,7 @@ h3{
 .fade-out{
     animation: fade-out linear;
     animation-timeline: view();
-    animation-range: entry 99.5% cover 100%;  
+    animation-range: exit -5vh;
 }
 @keyframes fade-out {
     from{

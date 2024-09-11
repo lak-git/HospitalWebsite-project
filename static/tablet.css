@@ -14,6 +14,7 @@
 nav{
     display: flex;
     justify-content: space-around;
+    
     background-color:  var(--backdrop);
 }
 
@@ -24,11 +25,12 @@ nav{
 .nav-left > a, .nav-right > a{
     display: flex;
     justify-content: center;
-    background-color: var(--main-blue);
     box-shadow: 0 0 2px black;
     border-radius: 0;
     margin: 2px 0;
     width: 35vw;
+
+    background-color: var(--main-blue);
 }
 
 .nav-center{display: none;}
@@ -38,6 +40,7 @@ nav{
     flex-wrap: wrap;
     justify-content: space-evenly;
     width: 99vw;
+
     background-color: var(--main-blue);
 }
 #nav-mobile > a{
@@ -53,6 +56,7 @@ nav{
 .footer-inner{
     display: flex;
     justify-content: space-between;
+
     border-bottom: var(--footer-line) solid 2.5px;
 }
 
@@ -76,5 +80,3 @@ nav{
     width: 27.5vw;
     height: auto;
 }
-
-

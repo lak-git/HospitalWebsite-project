@@ -40,6 +40,7 @@ body {
     font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
+
     background-color: var(--backdrop);
     color: var(--text);
 }
@@ -64,10 +65,10 @@ nav{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
     background-color: var(--main-blue);
 }
 nav a{
-    color: white;
     text-decoration: none;
     font-weight: 600;
     margin: 0.75vh 0.75vw;
@@ -75,11 +76,14 @@ nav a{
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.35s ease;
+
+    color: white;
 }
 nav a:hover{
+    box-shadow: 0 0 0.5vh black;
+
     color: var(--main-blue);
     background-color: white;
-    box-shadow: 0 0 0.5vh black;
 }
 
 
@@ -114,9 +118,10 @@ main {
     max-width: 85vw;
     min-height: 50vh;
     margin: auto;
-    background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    background-color: white;
 }
 
 
@@ -160,6 +165,7 @@ h3{
     width: 0;
     height: 2px;
     margin: auto;
+
     transition: all 0.125s linear;
     background-color: white;
 }
@@ -167,6 +173,7 @@ h3{
 .underline-effect a:hover{transform: scale(1.05);}
 
 
+/* Animations */
 .scroll-animation{
     animation: scroll-anim linear;
     animation-timeline: view();
@@ -183,13 +190,41 @@ h3{
     }
 }
 
+.fade-in{
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+@keyframes fade-in {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.fade-out{
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range: entry 99.5% cover 100%;  
+}
+@keyframes fade-out {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
 
 
 /* Footer section */
 footer, footer a{
+    text-decoration: none;
     background-color: var(--footer-blue);
     color: white;
-    text-decoration: none;
 }
 footer > p{
     display: block;
@@ -197,7 +232,6 @@ footer > p{
     padding-top: 1vh;
     margin-bottom: 0;
 }
-/* footer a:hover{text-decoration:underline;} */
 
 
 .footer-container{
@@ -218,12 +252,14 @@ footer > p{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+
     margin: 0 6vw;
 }
 
 #footer-logo{
     display: flex;
     justify-content: flex-start;
+    
     margin-left: 12.5vh;
 }
 

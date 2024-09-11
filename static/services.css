@@ -2,6 +2,7 @@ section[name="services-list"]{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
     background-color: var(--content-bg);
 }
 
@@ -10,12 +11,19 @@ section[name="services-list"]{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
     width: 45%;
     padding: 1vw;
     margin: 2.5vh 0;
     border-radius: 5vw;
+
     background-color: var(--content-blue);
+
     transition: all 0.35s ease;
+
+    animation: fade-in linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
 }
 .service-item:hover{
     box-shadow: 0 0 1vh black;

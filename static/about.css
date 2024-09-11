@@ -6,13 +6,16 @@ section{padding-bottom: 3vh;}
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
     border-radius: 5vh 5vh 0 0;
+
     background-color: var(--content-bg);
 }
 
 .title-container > h2{
-    font-size: 3vw;
     width: 45%;
+
+    font-size: 3vw;
     text-align: center
 }
 .title-container > img{
@@ -25,8 +28,10 @@ section{padding-bottom: 3vh;}
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
     font-weight: 450;
     padding: 3vh;
+
     background-color: var(--content-blue);
     color: white;
 }
@@ -48,9 +53,11 @@ section{padding-bottom: 3vh;}
 .link-container{
     display: flex;
     justify-content: center;
+
     padding: 3vh 0;
     margin-bottom: 5vh;
     border-radius: 0 0 5vh 5vh;
+
     background-color: var(--content-blue);
 }
 
@@ -59,17 +66,20 @@ section{padding-bottom: 3vh;}
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
     text-decoration: none;
-    color: white;
     font-size: 14.5pt;
     font-weight: 550;
     margin-left: 3vw;
+
+    color: white;
 }
 .link-container img{
     margin-right: 1vh;
     width: 7.5vh;}
 
 
+/* Hospital Summary Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -83,9 +93,10 @@ table, th, td {
 }
 
 th {
+    text-align: center;
+    
     background-color: var(--main-blue);
     color: white;
-    text-align: center;
 }
 
 tfoot td {

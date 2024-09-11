@@ -3,6 +3,7 @@ input[type="password"]{
     padding: 1.5vh;
     margin-top: 1vh;
     margin-bottom: 3vh;
+    
     border-radius: 5px;
     border: 2px solid var(--border);
 }

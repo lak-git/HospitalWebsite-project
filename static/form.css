@@ -8,9 +8,11 @@ form {
 
 fieldset{
     width: 100%;
-    background-color: var(--content-bg);
     border-radius: 22.5px;
+
+    background-color: var(--content-bg);
 }
+
 
 label {
     display: block;
@@ -22,6 +24,7 @@ label.inline{
     margin: 0 10%;
 }
 
+
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -32,7 +35,18 @@ select, textarea {
     margin-top: 1vh;
     border-radius: 5px;
     border: 2px solid var(--border);
+
+    transition: all 0.45s ease;
 }
+
+input[type="text"]:user-invalid,
+input[type="email"]:user-invalid,
+input[type="tel"]:user-invalid,
+input[type="password"]:user-invalid{
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, 0.02);
+}
+
 
 .button-container{
     display: flex;
@@ -42,12 +56,15 @@ select, textarea {
 button{
     font-family: 'Montserrat';
     font-size: larger;
+
     padding: 1.5vh 4vw;
     border: none;
     border-radius: 30vw;
     margin: 3vh 0;
+    
     transition: all 0.4s ease;
     cursor: pointer;
+
     background-color: var(--main-blue);
     color: white;
 }

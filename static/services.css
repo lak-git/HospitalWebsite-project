@@ -46,7 +46,7 @@ section[name="services-list"]{
 
 
 /* Tablets and mobile phones */
-@media screen and (max-width:600px) {
+@media screen and (max-width:880px) {
     .service-item{width: 100%;}
     .service-item > img{
         max-width: 80%;

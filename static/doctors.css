@@ -65,6 +65,8 @@ section[name="doctors-grid"] {
 }
 
 
+
+/* For Tablets and Mobile Phones */
 @media screen and (max-width:630px) {
     section[name="doctors-grid"] {
         grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));

@@ -17,6 +17,7 @@ form a:hover{
 
 
 
+/* For Tablets and Mobile phones */
 @media screen and (max-width:630px) {
     .button-container{justify-content: center;}
 

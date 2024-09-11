@@ -121,6 +121,7 @@ tfoot td {
     .branch-container > p{width: 100%;}
 }
 
+
 /* Mobile only */
 @media screen and (max-width:430px) {
     .title-container{border-radius: 3vh 3vh 0 0;}

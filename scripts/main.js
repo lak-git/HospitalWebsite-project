@@ -1,4 +1,5 @@
-if (screen.width > 880)
+// Sticky navigation bar only for desktop view
+if (screen.width > 880 && window.innerWidth > 880)
 {
     const navbar = document.querySelector("nav");
     let navbarHeight = navbar.getBoundingClientRect()["height"];
@@ -19,3 +20,21 @@ if (screen.width > 880)
         }
     }
 }
+
+// Automatically login user
+let currentLogin = JSON.parse(localStorage.getItem("CurrentLogin"))
+if ( !(currentLogin === null) ) 
+{
+    const currentTime = new Date().getTime();
+    if (currentTime > currentLogin.expirationDate) {
+        localStorage.removeItem("CurrentLogin");
+    } else {
+        applyAccountPreferences(currentLogin);
+    }
+
+    function applyAccountPreferences(account) {
+        let accountBtn = document.getElementById("account");
+        accountBtn.innerText = account.accountInfo.username;
+    }
+}
+

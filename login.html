@@ -13,6 +13,9 @@
     <link rel="stylesheet" media="screen and (max-width:430px)" href="static/mobile.css">
     <!-- JS -->
     <script src="scripts/main.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js" defer></script>
+    <script src="scripts/login.js" defer></script>
     <!-- PWA Elements -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon.png">
@@ -73,7 +76,7 @@
         <p>Here, you can securely access your personal account to manage your appointments, view medical records, and update your contact information. If you're a new user, feel free to sign up to get started.</p>
     </section>
     <section name="login-form" class="form-container">
-        <form action="#" method="post">
+        <form action="#">
             <fieldset>
                 <label for="email">Email Address:</label>
                     <input type="email" id="email" name="email" required>
@@ -85,7 +88,7 @@
             </fieldset>
 
             <div class="button-container">
-                <button class="full" type="submit">Log In</button>
+                <button class="full" type="submit" id="login">Log In</button>
             </div>
     </section>
 </main>

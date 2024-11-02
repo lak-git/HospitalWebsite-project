@@ -1,19 +1,21 @@
-const navbar = document.querySelector("nav");
-const logo = document.getElementById("logo");
+if (screen.width > 880)
+{
+    const navbar = document.querySelector("nav");
+    let navbarHeight = navbar.getBoundingClientRect()["height"];
+    const logo = document.getElementById("logo");
 
-window.addEventListener("scroll", stickyScroll);
+    logo.style.paddingBottom = `${navbarHeight}px`;
+    let navbarInitialPosition = navbar.offsetTop - navbarHeight;
+    navbar.style.top = `${navbarInitialPosition}px`;
 
-function stickyScroll() {
-    let sticky = navbar.offsetTop;
+    window.addEventListener("scroll", stickyScroll);
 
-    if (scrollY == sticky && scrollY == 0) {
-        navbar.classList.remove("sticky")
-        logo.style.paddingBottom = "0";
-        logo.style.opacity = "100";
-    } 
-    else if (scrollY >= sticky) {
-        navbar.classList.add("sticky");
-        logo.style.paddingBottom = "40px";
-        logo.style.opacity = "0";
-      }
+    function stickyScroll() {
+        if (scrollY < navbarInitialPosition) {
+            navbar.style.top = `${navbarInitialPosition - scrollY}px`;
+        }
+        else if (scrollY > navbarInitialPosition) {
+            navbar.style.top = 0;
+        }
+    }
 }

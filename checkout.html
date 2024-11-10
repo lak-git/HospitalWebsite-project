@@ -4,15 +4,17 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta name='description' content='Scheduling your consultation at Colebrooke Hospital is simple and convenient. Whether you need to see a specialist, follow up on treatment, or require general medical advice, our online appointment system ensures you can secure your preferred time with ease'>
+    <meta name='description' content='Welcome to Colebrooke Hospital, where we are committed to providing exceptional healthcare services to our community. Our team of dedicated professionals is here to ensure you receive the highest quality care in a compassionate and supportive environment.'>
     <!-- Style sheets -->
     <link rel="stylesheet" href="static/main.css">
     <link rel="stylesheet" href="static/form.css">
-    <link rel="stylesheet" href="static/appointments.css">
+    <link rel="stylesheet" href="static/checkout.css">
     <link rel="stylesheet" media="screen and (min-width:431px) and (max-width:880px)" href="static/tablet.css">
     <link rel="stylesheet" media="screen and (max-width:430px)" href="static/mobile.css">
     <!-- JS -->
-    <script src="scripts/main.js" async></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/forms.js" defer></script>
+    <script src="scripts/checkout.js" defer></script>
     <!-- PWA Elements -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon.png">
@@ -24,7 +26,7 @@
     <meta name="msapplication-config" content="static/images/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
     
-    <title>Colebrooke Hospital|Appointments</title>
+    <title>Colebrooke Hospital|Checkout</title>
 </head>
 
 <body>
@@ -68,16 +70,14 @@
 </header>    
 
 <main>
-    <section name="appointments-intro">
-        <h1>Book Your Appointment</h1>
-        <p>Scheduling your consultation at Colebrooke Hospital is simple and convenient. Whether you need to see a specialist, follow up on treatment, or require general medical advice, our online appointment system ensures you can secure your preferred time with ease. Please fill out the form below with your details, and one of our team members will confirm your appointment shortly. Your health is our priority, and we are here to provide the care and attention you deserve at a time that suits you.</p>
+    <section>
+        <h1>Checkout</h1>
     </section>
 
-    <section name="appointment-form" class="form-container">
-        <form action="#" method="post"> 
-            <!-- Form for patient's personal information -->
+    <section name="checkout-form" class="form-container">
+        <form action="#" method="post">
             <fieldset>
-                <legend><h2>Patient Details</h2></legend>
+                <legend><h2>Personal Details</h2></legend>
                 
                 <label for="name">Full Name:</label>
                     <input type="text" id="name" name="name" required>
@@ -90,52 +90,22 @@
 
                 <label for="dob">Date of Birth:</label>
                     <input type="date" name="dob" id="dob" required>
-
-                <label for="gender">Gender:</label>
-                <select name="gender" id="gender">
-                    <option value="none">Not Specified</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                </select>
             </fieldset>
-            <!-- Form for the appointment -->
             <fieldset>
-                <legend><h2>Appointment Details</h2></legend>
+                <legend><h2>Delivery Details</h2></legend>
 
-                <label for="specialty">Doctor's Specialty:</label>
-                <select name="specialty" id="specialty" required>
-                    <option value=""></option>
-                    <option value="Cardiologist">Cardiologist</option>
-                    <option value="Pediatrician">Pediatrician</option>
-                    <option value="Orthopedist">Orthopedist</option>
-                    <option value="Gastroenterologist">Gastroenterologist</option>
-                </select>
-                
-                <label for="doctor">Doctor:</label>
-                <select name="doctor" id="doctor" required>
-                    <option value=""></option>
-                    <option value="id1_st">Dr. Sarah Thompson</option>
-                    <option value="id2_js">Dr. John Smith</option>
-                    <option value="id3_ed">Dr. Emily Davis</option>
-                    <option value="id4_db">Dr. David Brown</option>
-                </select>
+                <label for="address">Delivery Address:</label>
+                    <textarea id="address" name="address" rows="2" required></textarea>
 
-                <label for="date-time">Date and Time:</label>
-                    <input type="datetime-local" name="date-time" id="date-time" required>
-
-                <label for="consultation-type">Consultation Type: </label> 
-                    <label for="in-person" class="inline">
-                        <input type="radio" name="consultation-type" id="in-person">In Person</label>
-                    <label for="virtual" class="inline">
-                        <input type="radio" name="consultation-type" id="virtual">Virtual</label>
-                        
-                <label for="reason">Reason for Consultation:</label>
-                    <textarea id="reason" name="reason" rows="3" required></textarea>  
+                <label for="payment-type">Select Payment Option:</label>
+                    <label for="cash" class="inline">
+                        <input type="radio" name="payment-type" id="cash">Cash</label>
+                    <label for="card" class="inline">
+                        <input type="radio" name="payment-type" id="card">Card</label>
             </fieldset>
-            
+
             <div class="button-container">
-                <button type="submit">Submit</button>   <button type="reset">Reset</button>
+                <button>Order</button>   <button>Clear</button>
             </div>
         </form>
     </section>
@@ -143,9 +113,8 @@
     <section name="info">
         <h2>Important Information</h2>
         <ul>
-            <li>You will recive a confirmation email and/or SMS once your reservation is successfully submitted.</li>
-            <li>Please arrive 15 minutes before your scheduled appointment time.</li>
-            <li>If you need to reschedule or cancel your appointment, please contact us at least 24 hours in advance.</li>
+            <li>Medicines will be delivered to your specified address within the stipulated delivery time.</li>
+            <li>If you have any questions or need assistance, please contact our pharmacy at <div class="bold">011 555 2200</div> or <a href="mailto:#">pharmacy@colebrookehospital.lk</a></li>
         </ul>
     </section>
 </main>
@@ -166,8 +135,8 @@
                 <a href="pharmacy.html">Get Medicine</a>
             </div>
         </div>
-        <div class="footer-inner underline-effect">
-            <div class="footer-box">
+        <div class="footer-inner">
+            <div class="footer-box underline-effect">
                 <a href="services.html">Our Services</a>
                 <a href="doctors.html">Our Doctors</a>
             </div>

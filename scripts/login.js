@@ -15,8 +15,8 @@ function loginToAccount()
         return;
     }
 
-    let submittedID = String(CryptoJS.MD5(`${email.value.trim() + password.value.trim()}`));
-    let submittedPassword = String(CryptoJS.MD5(`${password.value.trim() + "salt"}`))
+    let submittedID = Hash(`${email.value.trim() + password.value.trim()}`);
+    let submittedPassword = Hash(`${password.value.trim()}`);
     let validationValues = authenticateCredentials(submittedID, submittedPassword); 
 
     if ( (accounts === null) ) {
@@ -26,7 +26,7 @@ function loginToAccount()
     else if ( validationValues[0] ) {
         // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
         const accountDuration = 1000 * 60 // 1 minute
-        const currentTime = new Date().getTime();
+        // const currentTime = new Date().getTime();
 
         let currentLogin = {
             "accountID"     : validationValues[1], 
@@ -39,12 +39,6 @@ function loginToAccount()
 }
 
 // Validates the submitted data in the form fields
-function isValidInput(...formFields) {
-    for (let formInput of formFields){
-        if ( !formInput.checkValidity() ) {return false;}
-    }
-    return true;
-}
 
 function authenticateCredentials(id, pwd) {
     for (let i=0; i < accounts.length; i++){

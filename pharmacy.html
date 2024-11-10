@@ -8,10 +8,13 @@
     <!-- Style sheets -->
     <link rel="stylesheet" href="static/main.css">
     <link rel="stylesheet" href="static/form.css">
+    <link rel="stylesheet" href="static/pharmacy.css">
     <link rel="stylesheet" media="screen and (min-width:431px) and (max-width:880px)" href="static/tablet.css">
     <link rel="stylesheet" media="screen and (max-width:430px)" href="static/mobile.css">
     <!-- JS -->
-    <script src="scripts/main.js" async></script>
+    <script src="scripts/forms.js" async></script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/pharmacy.js" defer></script>
     <!-- PWA Elements -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicons/apple-touch-icon.png">
@@ -38,7 +41,7 @@
     </div>
     <nav>
         <div class="nav-left">
-            <a id="account" href="login.html">LogIn / SignUp</a>
+            <a id="account" href="login.html">Log In / Register</a>
         </div>
         <div class="nav-center">
                 <a href="index.html">Home</a>
@@ -73,27 +76,17 @@
     </section>
 
     <!-- Prescription medicine order form -->
-    <section name="medicine-form" class="form-container">
+    <section class="form-container">
         <form action="#" method="post">
             <fieldset>
-                <legend><h2>Patient Information</h2></legend>
-                
-                <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-
-                <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-
-                <label for="contact">Contact Number:</label>
-                    <input type="tel" id="contact" name="contact" required>
-
-                <label for="dob">Date of Birth:</label>
-                    <input type="date" name="dob" id="dob" required>
-
-                <label for="address">Residence Address:</label>
-                    <textarea id="address" name="address" rows="2" required></textarea> 
+                <legend class="title"><h2>Select Medicine Type</h2></legend>
+                <label for="medicine-type"></label> 
+                    <label for="prescription" class="inline">
+                        <input type="radio" name="medicine-type" id="prescription">Prescription Medicine</label>
+                    <label for="otc" class="inline">
+                        <input type="radio" name="medicine-type" id="otc">Over The Counter (OTC)</label>
             </fieldset>
-            <fieldset>
+            <fieldset id="prescription-form">
                 <legend><h2>Prescription Information</h2></legend>
 
                 <label for="prescription">Upload Prescription:</label>
@@ -111,47 +104,170 @@
                         <option value="id4_db">Dr. David Brown</option>
                     </select>
             </fieldset>
-            <!-- Additional medicine order form -->
-            <fieldset>
-                <legend><h2>Additional Medicine</h2></legend>
-
-                <label for="med-type">Medicine Name:</label>
-                    <select name="med-type" id="med-type">
-                        <option value=""> </option>
-                        <option value="id1_prctm">Paracetamol - Antipyretic/Painkiller</option>
-                        <option value="id2_cc">Clotrimazole Cream - Antifungal</option>
-                        <option value="id3_dc">Diphenydramine Capsules - Antiallergic</option>
-                        <option value="id4_ns">Nasal Spray</option>
-                    </select>
-
-                <label for="dosage-quantity">Dosage and Quantity of Medicine:</label>
-                    <select name="dosage-quantity" id="dosage-quantity">
-                        <option value=""> </option>
-                        <option value="dose1">500mg, 1 packet (16 tablets)</option>
-                        <option value="dose2">500mg, 4 packets</option>
-                    </select>
-
-                <label for="payment-type">Select Payment Option: </label> 
-                    <label for="cash" class="inline">
-                        <input type="radio" name="payment-type" id="cash">Cash</label>
-                    <label for="card" class="inline">
-                        <input type="radio" name="payment-type" id="card">Card</label>
-                    <label for="insurance" class="inline">
-                            <input type="radio" name="payment-type" id="insurance">Insurance</label>
-            </fieldset>
-
-            <div class="button-container">
-                <button type="submit">Submit</button>   <button type="reset">Reset</button>
-            </div>
         </form>
+        <section id="otc-form">
+            <legend><h2>OTC Medicine</h2></legend>
+            <div class="otc-category">
+                <h2>Analgesics</h2>
+                <ul id="analgesics" class="dropdown">
+                    <li>
+                        <label>Panadol (Paracetamol)
+                        <input type="number" data-name="Panadol - 10 tablets (500mg)" data-price="50" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Brufen (Ibuprofen)
+                        <input type="number" data-name="Brufen - 20 tablets (200mg)" data-price="200" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Asprin 
+                        <input type="number" data-name="Asprin - 20 tablets (500mg)" data-price="100" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Naprosyn (Naproxen)
+                        <input type="number" data-name="Naprosyn - 10 tablets (250mg)" data-price="300" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Voltaren (Diclofenac)
+                        <input type="number" data-name="Voltaren - 10 tablets (50mg)" data-price="150" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Ponstan (Mefenamic Acid)
+                        <input type="number" data-name="Ponstan - 10 tablets (250 mg)" data-price="150" min="0" class="otc-input"></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="otc-category">
+                <h2>Antibiotics</h2>
+                <ul id="" class="dropdown">
+                    <li>
+                        <label>Amoxil (Amoxicillin)
+                        <input type="number" data-name="Amoxil - 10 capsules (500mg)" data-price="300" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Ciplox (Ciprofloxacin)
+                        <input type="number" data-name="Ciplox - 10 tablets (500mg)" data-price="250" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Doxytab (Doxycycline)
+                        <input type="number" data-name="Doxytab - 10 tablets (100mg)" data-price="300" min=" 0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Metrogel (Metronidazole)
+                        <input type="number" data-name="Metrogel - 10 tablets (400mg)" data-price="150" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Dalacin (Clindamycin)
+                        <input type="number" data-name="Clindamycin - 10 capsules (300mg)" data-price="500" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Bactrim (Co-trimoxazole)
+                        <input type="number" data-name="Bactrim - 10 tablets (160mg)" data-price="150" min="0" class="otc-input"></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="otc-category">
+                <h2>Antidepressants</h2>
+                <ul id="" class="dropdown">
+                    <li>
+                        <label>Prozac (Fluoxetine)
+                        <input type="number" data-name="Prozac - 10 capsules (20mg)" data-price="800" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Zoloft (Sertraline)
+                        <input type="number" data-name="Zoloft - 10 tablets (50mg)" data-price="600" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Elavil (Amitriptyline)
+                        <input type="number" data-name="Elavil - 10 tablets (25mg)" data-price="250" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Cipram (Citalopram)
+                        <input type="number" data-name="Cipram - 10 tablets (20mg)" data-price="800" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Lexapro (Escitalopram)
+                        <input type="number" data-name="Lexapro - 10 tablets (10mg)" data-price="1200" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Remeron (Mirtazapine)
+                        <input type="number" data-name="Remeron - 10 tablets (15mg)" data-price="1200" min="0" class="otc-input"></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="otc-category">
+                <h2>Antihypersensitives</h2>
+                <ul id="" class="dropdown">
+                    <li>
+                        <label>Norvasc (Amlodipine)
+                        <input type="number" data-name="Norvasc - 10 tablets (5mg)" data-price="200" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Cozaar (Losartan)
+                        <input type="number" data-name="Cozaar - 10 tablets (50mg)" data-price="300" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Apo-Hydro (Hydrochlorothiazide)
+                        <input type="number" data-name="Apo-Hydro - 10 tablets (25mg)" data-price="100" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Renitec (Enalapril)
+                        <input type="number" data-name="Renitec - 10 tablets (5mg)" data-price="250" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Lopressor (Metoprolol)
+                        <input type="number" data-name="Lopressor - 10 tablets (50mg)" data-price="300" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Kyolic (Allium sativum)
+                        <input type="number" data-name="Kyolic - 30 tablets (500mg)" data-price="400" min="0" class="otc-input"></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="otc-category">
+                <h2>Antihistamines</h2>
+                <ul id="" class="dropdown">
+                    <li>
+                        <label>Zyrtec (Cetirizine)
+                        <input type="number" data-name="Zyrtec - 10 tablets (10mg)" data-price="200" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Claritin (Loratadine)
+                        <input type="number" data-name="Claritin - 10 tablets (10mg)" data-price="200" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Benadryl (Diphenhydramine)
+                        <input type="number" data-name="Benadryl - 10 tablets (25mg)" data-price="150" min="0" class="otc-input"></label>
+                    </li>
+                    <li>
+                        <label>Piriton (Chlorpheniramine)
+                        <input type="number" data-name="Piriton - 10 tablets (4mg)" data-price="100" min="0" class="otc-input"></label>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="save-button-container">
+            <button>Save Order for Later</button>   <button>Apply Saved Order</button>
+        </div>
+        <div id="cart" role="table">
+            <h2>Cart</h2>
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Medicine</th>                   <th>Quantity</th>                  <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total Price:</td>   <td id="total-price">Rs 0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="button-container">
+            <button>Buy</button>   <button>Clear</button>
+        </div>
     </section>
-
-    <section name="info">
-        <h2>Important Information</h2>
-        <ul>
-            <li>Medicines will be delivered to your specified address within the stipulated delivery time.</li>
-            <li>If you have any questions or need assistance, please contact our pharmacy at <div class="bold">011 555 2200</div> or <a href="mailto:#">pharmacy@colebrookehospital.lk</a></li>
-        </ul>
 </main>
 
 <footer>

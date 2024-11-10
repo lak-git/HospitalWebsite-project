@@ -21,10 +21,10 @@ function registerAccount()
         return;
     }
 
-    let accountID = String(CryptoJS.MD5(`${email.value.trim() + password.value.trim()}`));
+    let accountID = Hash(`${email.value.trim() + password.value.trim()}`);
     let accountInfo = {
         "username"  : username.value.trim(),
-        "password"  : String(CryptoJS.MD5(`${password.value.trim() + "salt"}`)),
+        "password"  : Hash(`${password.value.trim()}`),
         "name"      : name.value.trim(),
         "email"     : email.value.trim(),
         "contact"   : telNumber.value.trim(),
@@ -34,7 +34,7 @@ function registerAccount()
     }
     // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
     const accountDuration = 1000 * 60; //1 minute
-    const currentTime = new Date().getTime();
+    // const currentTime = new Date().getTime();
     let currentLogin = {
         "accountID"     : accountID, 
         "accountInfo"   : accountInfo,
@@ -60,14 +60,6 @@ function registerAccount()
         location.replace("/");
 
     } else {alert("ERROR: Account Already Exists!")}
-}
-
-function isValidInput(...formFields) {
-    for (let formInput of formFields){
-        console.log(formInput);
-        if ( !formInput.checkValidity() ) {return false;}
-    }
-    return true;
 }
 
 function doesAccountExist(contactNubmer, email) {

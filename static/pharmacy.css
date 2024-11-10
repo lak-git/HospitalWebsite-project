@@ -1,0 +1,96 @@
+.title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+label.inline{
+    margin: 0;
+    margin-left: 14%;
+}
+
+#prescription-form, #otc-form{display: none;}
+
+#otc-form{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+    border-radius: 22.5px;
+    border: 2px solid var(--border);
+
+    background-color: gray;
+}
+#otc-form > legend{width: 100%;}
+
+.otc-category{
+    width: 25rem;
+    margin-bottom: 5vh;
+
+    background-color: aqua;
+}
+
+.otc-category input{
+    display: inline;
+    width: 2rem;
+    padding: 1vh;
+    margin-right: 1rem;
+    
+    border-radius: 5px;
+    border: 2px solid var(--border);
+    transition: all 0.45s ease;
+}
+
+.otc-category h2 {text-align: center;}
+
+.dropdown li{margin: 2vh 0;}
+.dropdown li label{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+
+#cart{
+    display: none;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 2vh;
+    margin-left: 10%;
+}
+
+table, th, td {
+    border: 1px solid var(--table-border);
+    padding: 1vw;
+    text-align: left;
+}
+
+th {
+    text-align: center;
+    
+    background-color: var(--main-blue);
+    color: white;
+}
+
+tfoot td {
+    font-weight: 600;
+    text-align: center;
+}
+
+.save-button-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+.save-button-container button{
+    margin-inline: 3vw;
+    border-radius: 15px;
+}
+
+.save-button-container button, .button-container button{display: none;}

@@ -32,10 +32,10 @@ if ( USER_HAS_LOGGED_IN )
         localStorage.removeItem("CurrentLogin");
         alert("Session Expired. Please re-log in.")
     } else {
-        applyAccountPreferences(CURRENT_LOGIN);
+        displayLoginStatus(CURRENT_LOGIN);
     }
 
-    function applyAccountPreferences(account) {
+    function displayLoginStatus(account) {
         let accountBtn = document.getElementById("account");
         accountBtn.innerText = account.accountInfo.username;
     }

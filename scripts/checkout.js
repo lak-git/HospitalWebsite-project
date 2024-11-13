@@ -27,47 +27,14 @@ function showCardForm(condition) {
     })
 }
 
-//  //  
-
-let orderBtn = formBtns[0]; 
-let clearBtn = formBtns[1];
-
-orderBtn.addEventListener("click", orderMedicine);
-
-function orderMedicine() {
-    event.preventDefault();
-
-    if ( !isValidInput(fullName, email, contactNumber, dob, deliveryAddress) ) {
-        alert("Please make sure your personal details are correct.");
-        return;
-    }
-
-    if ( !isValidInput(cardNumber, zipCode, pinNumber)) {
-        alert("Please make sure your payment details are correct.");
-        return;
-    }
-
-    let orderDate = new Date();
-    const FIVE_DAYS = 1000*60*60*24*5;
-    orderDate.setTime(TIME_NOW + FIVE_DAYS);
-    alert(
-`Thank you for your purchase. Your order should arrive within 5 days (${orderDate.toLocaleDateString("en-GB")})`
-    )
-    sessionStorage.removeItem("PendingOrder");
-}
-
-
-if ( USER_HAS_LOGGED_IN ) 
-{
-    fullName.value = CURRENT_LOGIN.accountInfo.name;
-    email.value = CURRENT_LOGIN.accountInfo.email;
-    contactNumber.value = CURRENT_LOGIN.accountInfo.contact;
-    dob.value = CURRENT_LOGIN.accountInfo.birthDate;
-    deliveryAddress.value = CURRENT_LOGIN.accountInfo.address;
-}
-
-
 function displayCart() {
+    let isPrescription = JSON.parse(sessionStorage.getItem("PrescriptionOrder"));
+    if (isPrescription) {
+        let cartSection = document.getElementById('cart');
+        cartSection.style.display = "none";
+        return;
+    }
+
     let cart = JSON.parse(sessionStorage.getItem("PendingOrder"));
     if (cart === null) {
         alert("Invalid cart. No order found for checkout");
@@ -86,4 +53,38 @@ function displayCart() {
         }
     );
     totalPrice.textContent = `Rs ${total.toLocaleString('en-US', {minimumFractionDigits:2})}`;
+}
+
+//  //  
+
+let orderBtn = formBtns[0]; 
+let clearBtn = formBtns[1];
+
+orderBtn.addEventListener("click", orderMedicine);
+
+function orderMedicine() {
+    event.preventDefault();
+
+    let fullName = document.getElementById('name');
+    let email = document.getElementById('email');
+    let contactNumber = document.getElementById('contact');
+    let dob = document.getElementById('dob');
+    let deliveryAddress = document.getElementById('address');
+    if ( !isValidInput(fullName, email, contactNumber, dob, deliveryAddress) ) {
+        alert("Please make sure your personal details are correct.");
+        return;
+    }
+    if ( !isValidInput(cardNumber, zipCode, pinNumber)) {
+        alert("Please make sure your payment details are correct.");
+        return;
+    }
+
+    let orderDate = new Date();
+    const FIVE_DAYS = 1000*60*60*24*5;
+    orderDate.setTime(TIME_NOW + FIVE_DAYS);
+    alert(
+`Thank you for your purchase. Your order should arrive within 5 days (${orderDate.toLocaleDateString("en-GB")})`
+    )
+    sessionStorage.removeItem("PendingOrder");
+    location.replace("/");
 }

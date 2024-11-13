@@ -6,6 +6,7 @@ const buttons = document.querySelectorAll(".button-container button")
 const favButtons = document.querySelectorAll(".save-button-container button");
 const cartTable = document.getElementById('cart');
 let cart = [];
+let isPrescription = false;
 
 prescriptionBtn.addEventListener("change", toggleForm.bind(null, prescriptionForm, otcForm));
 otcBtn.addEventListener("change", toggleForm.bind(null, otcForm, prescriptionForm));
@@ -13,12 +14,13 @@ otcBtn.addEventListener("change", toggleForm.bind(null, otcForm, prescriptionFor
 
 function toggleForm(displayedForm, disabledForm) {
     if (displayedForm == prescriptionForm) {
-        displayedForm.style.display = "block";   
+        displayedForm.style.display = "block"; 
         cartTable.style.display = "none"; 
         favButtons.forEach(function (btn) {
             btn.style.display = "none";
             }
         )
+        isPrescription = true;
     } else {
         displayedForm.style.display = "flex";
         cartTable.style.display = "block";
@@ -113,8 +115,11 @@ buttons[0].addEventListener("click", buyMedicine);
 buttons[1].addEventListener("click", clearCart);
 
 function buyMedicine() {
-    if (!cart.length > 0) {
-        alert("Empty cart, No medicine to buy.")
+    if (isPrescription) {
+        sessionStorage.setItem("PrescriptionOrder", JSON.stringify(isPrescription));
+        location.replace("/checkout.html");
+    } else if (!cart.length > 0) {
+        alert("Empty cart, No medicine to buy.");
     } else {
         sessionStorage.setItem("PendingOrder", JSON.stringify(cart));
         location.replace("/checkout.html");

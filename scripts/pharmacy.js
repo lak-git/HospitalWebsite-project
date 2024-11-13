@@ -4,47 +4,39 @@ const otcBtn = document.getElementById("otc")
 const otcForm = document.getElementById("otc-form");
 const buttons = document.querySelectorAll(".button-container button")
 const favButtons = document.querySelectorAll(".save-button-container button");
+const cartTable = document.getElementById('cart');
 let cart = [];
 
-prescriptionBtn.addEventListener("change", togglePrescription.bind(null, prescriptionForm, otcForm));
-otcBtn.addEventListener("change", toggleOTC.bind(null, otcForm, prescriptionForm));
+prescriptionBtn.addEventListener("change", toggleForm.bind(null, prescriptionForm, otcForm));
+otcBtn.addEventListener("change", toggleForm.bind(null, otcForm, prescriptionForm));
 
-function togglePrescription(displayedForm, disabledForm) {
-    const cartTable = document.getElementById('cart');
+
+function toggleForm(displayedForm, disabledForm) {
+    if (displayedForm == prescriptionForm) {
+        displayedForm.style.display = "block";   
+        cartTable.style.display = "none"; 
+        favButtons.forEach(function (btn) {
+            btn.style.display = "none";
+            }
+        )
+    } else {
+        displayedForm.style.display = "flex";
+        cartTable.style.display = "block";
+        favButtons.forEach(function (btn) {
+            btn.style.display = "block";
+            }
+        )
+    }
 
     displayedForm.disabled = false;
-    displayedForm.style.display = "block";
     buttons.forEach(function (btn) {
-        btn.style.display = "block";
-        }
-    )
-    favButtons.forEach(function (btn) {
-        btn.style.display = "none";
-        }
-    )
-    disabledForm.style.display = "none";
-    disabledForm.disabled = true;
-    cartTable.style.display = "none"
-}
-
-function toggleOTC(displayedForm, disabledForm) {
-    const cartTable = document.getElementById('cart');
-    
-    displayedForm.disabled = false;
-    displayedForm.style.display = "flex";
-    buttons.forEach(function (btn) {
-        btn.style.display = "block";
-        }
-    )
-    favButtons.forEach(function (btn) {
         btn.style.display = "block";
         }
     )
     disabledForm.style.display = "none";
     disabledForm.disabled = true;
-    cartTable.style.display = "block"
-
 }
+
 
 // //
 
@@ -124,6 +116,7 @@ function buyMedicine() {
     if (!cart.length > 0) {
         alert("Empty cart, No medicine to buy.")
     } else {
+        sessionStorage.setItem("PendingOrder", JSON.stringify(cart));
         location.replace("/checkout.html");
     }
 }

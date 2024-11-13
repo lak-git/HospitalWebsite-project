@@ -2,3 +2,22 @@ label.inline{
     margin: 0;
     margin-left: 26%;
 }
+
+#cart{display: block;}
+
+#card-form{
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#card-number{width: 52vw;}
+
+#zipcode, #pin{width: 40%;}
+
+input[type="number"]{
+    padding: 1.5vh;
+    margin-top: 1vh;
+    border-radius: 5px;
+    border: 2px solid var(--border);
+}

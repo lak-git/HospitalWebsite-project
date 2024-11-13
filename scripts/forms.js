@@ -5,9 +5,7 @@ function isValidInput(...formFields) {
     return true;
 }
 
-
 const inputLength = 16;
-
 function Hash(input, count=3) {
     let inputString = String(input);
     if (inputString.length < inputLength) { return Hash(btoa(inputString)); }

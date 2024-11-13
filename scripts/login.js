@@ -25,15 +25,15 @@ function loginToAccount()
     }
     else if ( validationValues[0] ) {
         // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
-        const accountDuration = 1000 * 60 // 1 minute
-        // const currentTime = new Date().getTime();
+        const accountDuration = 1000 * 60 * 2 // 2 minutes
+        // const TIME_NOW = new Date().getTime();
 
-        let currentLogin = {
+        let CURRENT_LOGIN = {
             "accountID"     : validationValues[1], 
             "accountInfo"   : validationValues[2],
-            "expirationDate": currentTime + accountDuration
+            "expirationDate": TIME_NOW + accountDuration
         }
-        localStorage.setItem("CurrentLogin", JSON.stringify(currentLogin));
+        localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
         location.replace("/");
     } else {alert("Cannot Login. Make sure the account exists and check if Email or Password is correct.");}
 }

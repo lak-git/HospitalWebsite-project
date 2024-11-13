@@ -22,16 +22,17 @@ if (screen.width > 880 && window.innerWidth > 880)
 }
 
 // Automatically login user
-const currentLogin = JSON.parse(localStorage.getItem("CurrentLogin"));
-const currentTime = new Date().getTime();
+const CURRENT_LOGIN = JSON.parse(localStorage.getItem("CurrentLogin"));
+const TIME_NOW = new Date().getTime();
+const USER_HAS_LOGGED_IN = !(CURRENT_LOGIN === null); 
 
-if ( !(currentLogin === null) ) 
+if ( USER_HAS_LOGGED_IN ) 
 {
-    if (currentTime > currentLogin.expirationDate) {
+    if (TIME_NOW > CURRENT_LOGIN.expirationDate) {
         localStorage.removeItem("CurrentLogin");
         alert("Session Expired. Please re-log in.")
     } else {
-        applyAccountPreferences(currentLogin);
+        applyAccountPreferences(CURRENT_LOGIN);
     }
 
     function applyAccountPreferences(account) {

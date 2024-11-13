@@ -34,11 +34,11 @@ function registerAccount()
     }
     // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
     const accountDuration = 1000 * 60; //1 minute
-    // const currentTime = new Date().getTime();
-    let currentLogin = {
+    // const TIME_NOW = new Date().getTime();
+    let CURRENT_LOGIN = {
         "accountID"     : accountID, 
         "accountInfo"   : accountInfo,
-        "expirationDate": currentTime + accountDuration
+        "expirationDate": TIME_NOW + accountDuration
     }
 
     if ( accounts === null ) {
@@ -46,7 +46,7 @@ function registerAccount()
             {"accountID" : accountID, "accountInfo" : accountInfo}
         ]
         localStorage.setItem("Accounts", JSON.stringify(accounts));
-        localStorage.setItem("CurrentLogin", JSON.stringify(currentLogin));
+        localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
         alert("Account Created!");
         location.replace("/");
 
@@ -55,7 +55,7 @@ function registerAccount()
             {"accountID" : accountID, "accountInfo" : accountInfo}
         )
         localStorage.setItem("Accounts", JSON.stringify(accounts));
-        localStorage.setItem("CurrentLogin", JSON.stringify(currentLogin));
+        localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
         alert("Account Created!");
         location.replace("/");
 

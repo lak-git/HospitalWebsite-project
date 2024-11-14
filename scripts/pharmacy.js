@@ -4,6 +4,7 @@ const otcBtn = document.getElementById("otc")
 const otcForm = document.getElementById("otc-form");
 const buttons = document.querySelectorAll(".button-container button")
 const favButtons = document.querySelectorAll(".save-button-container button");
+const favBtnContainer = document.querySelector(".save-button-container");
 const cartTable = document.getElementById('cart');
 let cart = [];
 let isPrescription = false;
@@ -15,7 +16,8 @@ otcBtn.addEventListener("change", toggleForm.bind(null, otcForm, prescriptionFor
 function toggleForm(displayedForm, disabledForm) {
     if (displayedForm == prescriptionForm) {
         displayedForm.style.display = "block"; 
-        cartTable.style.display = "none"; 
+        cartTable.style.display = "none";
+        favBtnContainer.style.display = "none"
         favButtons.forEach(function (btn) {
             btn.style.display = "none";
             }
@@ -24,6 +26,7 @@ function toggleForm(displayedForm, disabledForm) {
     } else {
         displayedForm.style.display = "flex";
         cartTable.style.display = "block";
+        favBtnContainer.style.display = "flex"
         favButtons.forEach(function (btn) {
             btn.style.display = "block";
             }

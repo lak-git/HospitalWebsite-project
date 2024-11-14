@@ -1,3 +1,9 @@
+:root{
+    --otc-bg: #f9f9f9;
+}
+
+
+
 .title{
     display: flex;
     justify-content: center;
@@ -17,18 +23,22 @@ label.inline{
     justify-content: space-evenly;
     width: 100%;
     padding: 0;
-    border-radius: 22.5px;
-    border: 2px solid var(--border);
 
-    background-color: gray;
+    border-radius: 22.5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: var(--otc-bg);
 }
 #otc-form > legend{width: 100%;}
+
 
 .otc-category{
     width: 25rem;
     margin-bottom: 5vh;
 
-    background-color: aqua;
+    border-radius: 22.5px;
+    border: 2px solid var(--border);
+    background-color: var(--content-bg);
 }
 
 .otc-category input{
@@ -84,13 +94,22 @@ tfoot td {
 }
 
 .save-button-container{
-    display: flex;
+    display: none;
     justify-content: space-between;
     margin-bottom: 2vh;
+    width: 100%;
+
+    border-radius: 22.5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: var(--otc-bg);
 }
+
 .save-button-container button{
     margin-inline: 3vw;
     border-radius: 15px;
+    background-color: var(--main-blue);
 }
+.save-button-container button:hover{background-color: var(--footer-blue);}
 
 .save-button-container button, .button-container button{display: none;}

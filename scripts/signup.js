@@ -4,6 +4,7 @@ const submitBtn = document.getElementById("signup");
 
 submitBtn.addEventListener("click", registerAccount);
 
+
 function registerAccount() 
 {
     event.preventDefault();
@@ -30,11 +31,10 @@ function registerAccount()
         "contact"   : telNumber.value.trim(),
         "birthDate" : dob.value,
         "gender"    : gender.value,
-        "address"   : address.value.trim()         
+        "address"   : address.value.trim()
     }
     // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
-    const accountDuration = 1000 * 60; //1 minute
-    // const TIME_NOW = new Date().getTime();
+    const accountDuration = 1000 * 60 * 2; //2 minutes
     let CURRENT_LOGIN = {
         "accountID"     : accountID, 
         "accountInfo"   : accountInfo,
@@ -45,19 +45,13 @@ function registerAccount()
         accounts = [
             {"accountID" : accountID, "accountInfo" : accountInfo}
         ]
-        localStorage.setItem("Accounts", JSON.stringify(accounts));
-        localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
-        alert("Account Created!");
-        location.replace("/");
+        createAccountAndLogin(accounts, CURRENT_LOGIN);
 
     } else if ( !doesAccountExist(accountInfo.contact, accountInfo.email) ) {
         accounts.push(
             {"accountID" : accountID, "accountInfo" : accountInfo}
         )
-        localStorage.setItem("Accounts", JSON.stringify(accounts));
-        localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
-        alert("Account Created!");
-        location.replace("/");
+        createAccountAndLogin(accounts, CURRENT_LOGIN);
 
     } else {alert("ERROR: Account Already Exists!")}
 }
@@ -68,4 +62,11 @@ function doesAccountExist(contactNubmer, email) {
         if ( account.contact == contactNubmer || account.email == email ) {return true;}    
     }
     return false;
+}
+
+function createAccountAndLogin(existing_accounts, current_login) {
+    localStorage.setItem("Accounts", JSON.stringify(existing_accounts));
+    localStorage.setItem("CurrentLogin", JSON.stringify(current_login));
+    alert("Account Created!");
+    location.replace("/");
 }

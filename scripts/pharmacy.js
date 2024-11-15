@@ -154,38 +154,28 @@ saveOrderBtn.addEventListener("click", saveOrderToAccount);
 loadOrderBtn.addEventListener("click", loadOrderFromAccount);
 
 function saveOrderToAccount() {
-    if ( isLoggedIn() ) {
-        if (cart.length == 0) {
-            alert("Cannot save an empty cart. Please select some medicine.");
-            return;
-        }
-        CURRENT_LOGIN.accountInfo.savedOrder = JSON.stringify(cart);
-        localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
-        alert("Order saved to account!");
+    let emptyCart = cart.length == 0;
+    if (emptyCart) {
+        alert("Cannot save an empty cart. Please select some medicine.");
+        return;
     }
+    localStorage.setItem("SavedOrder", JSON.stringify(cart));
+    alert("Order saved to account!");
 }
 
 function loadOrderFromAccount() {
-    if ( isLoggedIn() ) {
-        clearCart();
-        if ( !validateSavedOrder() ) { return; }
-        cart = JSON.parse(CURRENT_LOGIN.accountInfo.savedOrder);
-        updateCart();
-        alert("Order has been loaded successfully.")
-    }
+    clearCart();
+    if ( !validateSavedOrder() ) { return; }
+    cart = JSON.parse(localStorage.getItem("SavedOrder"));
+    updateCart();
+    alert("Order has been loaded successfully.")
 
     function validateSavedOrder() {
-        let savedOrder = CURRENT_LOGIN.accountInfo.savedOrder;
-        if (savedOrder == undefined) {
+        let emptySavedOrder = localStorage.getItem("SavedOrder") === null;
+        if (emptySavedOrder) {
             alert("There is no saved order to load.");
             return false``
         }
         return true;
     }
-}
-
-function isLoggedIn() {
-    if ( USER_HAS_LOGGED_IN ) { return true; }
-    alert("You need to be logged into an account in order to use this feature.");
-    return false;
 }

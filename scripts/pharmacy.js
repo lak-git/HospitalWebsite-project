@@ -133,7 +133,7 @@ function buyMedicine() {
 
     function saveOrderToSession(OrderType, order) {
         sessionStorage.setItem(OrderType, JSON.stringify(order));
-        location.replace("/checkout.html");
+        location.replace("./checkout.html");
     }
 }
 

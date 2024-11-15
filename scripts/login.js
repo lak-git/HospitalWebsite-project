@@ -15,15 +15,16 @@ function loginToAccount()
         return;
     }
 
+    let noAccountsExist = accounts === null; 
+    if (noAccountsExist) {
+        alert("No accounts exist. Cannot Login.");
+        return;
+    }
+
     let submittedID = Hash(`${email.value.trim() + password.value.trim()}`);
     let submittedPassword = Hash(`${password.value.trim()}`);
     let validationValues = authenticateCredentials(submittedID, submittedPassword); 
-
-    if ( (accounts === null) ) {
-        alert("No accounts exist.");
-        return null;
-    }
-    else if ( validationValues[0] ) {
+    if ( validationValues[0] ) {
         // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
         const accountDuration = 1000 * 60 * 2 // 2 minutes
         // const TIME_NOW = new Date().getTime();

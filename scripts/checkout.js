@@ -86,5 +86,5 @@ function orderMedicine() {
 `Thank you for your purchase. Your order should arrive within 5 days (${orderDate.toLocaleDateString("en-GB")})`
     )
     sessionStorage.removeItem("PendingOrder");
-    location.replace("/");
+    location.replace(".");
 }

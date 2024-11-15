@@ -30,7 +30,8 @@ if ( USER_HAS_LOGGED_IN )
 {
     if (TIME_NOW > CURRENT_LOGIN.expirationDate) {
         localStorage.removeItem("CurrentLogin");
-        alert("Session Expired. Please refresh page or re-log in.")
+        alert("Session Expired. Please refresh page or re-log in.");
+        location.href(".");
     } else {
         displayLoginStatus(CURRENT_LOGIN);
     }

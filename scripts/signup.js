@@ -68,5 +68,5 @@ function createAccountAndLogin(existing_accounts, current_login) {
     localStorage.setItem("Accounts", JSON.stringify(existing_accounts));
     localStorage.setItem("CurrentLogin", JSON.stringify(current_login));
     alert("Account Created!");
-    location.replace("/");
+    location.replace(".");
 }

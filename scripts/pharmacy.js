@@ -31,6 +31,7 @@ function toggleForm(displayedForm, disabledForm) {
             btn.style.display = "block";
             }
         )
+        isPrescription = false;
     }
 
     displayedForm.disabled = false;
@@ -104,16 +105,31 @@ clearBtn.addEventListener("click", clearCart);
 
 function buyMedicine() {
     if (isPrescription) {
-        saveOrderToSession("PrescriptionOrder", isPrescription);
+        buyPrescriptionMedicine();
     } else if (cart.length == 0) {
         alert("Empty cart, No medicine to buy.");
     } else {
-        saveOrderToSession("PendingOrder", cart);
+        buyOTCMedicine();
     }
 
     function saveOrderToSession(OrderType, order) {
         sessionStorage.setItem(OrderType, JSON.stringify(order));
         location.replace("./checkout.html");
+    }
+    function buyPrescriptionMedicine() {
+        let prescription = document.getElementById('prescription');
+        let prescriptionDate = document.getElementById('prescription-date');
+        let prescriptionDoctor = document.getElementById('doctor');
+        if (!isValidInput(prescription, prescriptionDate, prescriptionDoctor)) {
+            alert("Make sure your prescription details are correct.");
+            return;
+        }
+        saveOrderToSession("PrescriptionOrder", isPrescription);
+    }
+    function buyOTCMedicine() {
+        isPrescription = false;
+        saveOrderToSession("PendingOrder", cart);
+        saveOrderToSession("PrescriptionOrder", isPrescription);
     }
 }
 
@@ -145,7 +161,9 @@ function saveOrderToAccount() {
 
 function loadOrderFromAccount() {
     clearCart();
-    if ( !validateSavedOrder() ) { return; }
+    if ( !validateSavedOrder() ) {
+        return;
+    }
     cart = JSON.parse(localStorage.getItem("SavedOrder"));
     updateCart();
     alert("Order has been loaded successfully.")

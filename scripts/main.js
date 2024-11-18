@@ -2,8 +2,8 @@
 if (screen.width > 880 && window.innerWidth > 880)
 {
     const navbar = document.querySelector("nav");
-    let navbarHeight = navbar.getBoundingClientRect()["height"];
     const logo = document.getElementById("logo");
+    let navbarHeight = navbar.getBoundingClientRect()["height"];
 
     logo.style.paddingBottom = `${navbarHeight}px`;
     let navbarInitialPosition = navbar.offsetTop - navbarHeight;

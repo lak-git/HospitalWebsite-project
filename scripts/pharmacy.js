@@ -49,30 +49,9 @@ const otcMedicine = document.querySelectorAll(".otc-input");
 const cartTableBody = document.querySelector('#cart-table tbody');
 const totalPrice = document.querySelector('#total-price');
 
-otcMedicine.forEach(function (input) {
-    input.addEventListener("input", function () {
-        let name = input.dataset.name;
-        let price = parseFloat(input.dataset.price);
-        let quantity = parseInt(input.value);
-    
-        let itemIndex = cart.findIndex(storedItem => storedItem.name === name);
-        if (itemIndex != -1) {
-            if (quantity > 0) {
-                cart[itemIndex].quantity = quantity;
-            }
-            else{ cart.splice(itemIndex, 1); }
-        }
-        else if (quantity > 0) {
-            item = {
-                "name"  :name,
-                "price" :price,
-                "quantity":quantity
-            }
-            cart.push(item);
-        }
-
-        updateCart();
-    });
+otcMedicine.forEach(function (input) 
+{
+    input.addEventListener("input", applyToCart.bind(null, input));
 })
 
 function applyToCart(input) {
@@ -81,7 +60,8 @@ function applyToCart(input) {
     let quantity = parseInt(input.value);
 
     let itemIndex = cart.findIndex(storedItem => storedItem.name === name);
-    if (itemIndex != -1) {
+    let itemExistsAtIndex = itemIndex != -1; 
+    if (itemExistsAtIndex) {
         if (quantity > 0) {
             cart[itemIndex].quantity = quantity;
         }

@@ -16,7 +16,6 @@ function registerAccount()
     let dob = document.getElementById("dob")
     let gender = document.getElementById("gender")
     let address = document.getElementById("address");
-
     if ( !isValidInput(username, password, name, email, telNumber, address))  {
         alert("Invalid Input. Make sure you entered the information correctly.");
         return;
@@ -63,7 +62,6 @@ function doesAccountExist(contactNubmer, email) {
     }
     return false;
 }
-
 function createAccountAndLogin(existing_accounts, current_login) {
     localStorage.setItem("Accounts", JSON.stringify(existing_accounts));
     localStorage.setItem("CurrentLogin", JSON.stringify(current_login));

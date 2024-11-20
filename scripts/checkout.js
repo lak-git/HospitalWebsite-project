@@ -57,7 +57,7 @@ function displayCart() {
     }
 }
 
-//  //  
+// Medicine order functionality //  
 
 let orderBtn = formBtns[0]; 
 let clearBtn = formBtns[1];

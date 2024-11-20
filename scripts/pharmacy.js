@@ -6,12 +6,12 @@ const buttons = document.querySelectorAll(".button-container button")
 const favButtons = document.querySelectorAll(".save-button-container button");
 const favBtnContainer = document.querySelector(".save-button-container");
 const cartTable = document.getElementById('cart');
+
 let isPrescription = false;
 let cart = [];
 
 prescriptionBtn.addEventListener("change", toggleForm.bind(null, prescriptionForm, otcForm));
 otcBtn.addEventListener("change", toggleForm.bind(null, otcForm, prescriptionForm));
-
 
 function toggleForm(displayedForm, disabledForm) {
     if (displayedForm == prescriptionForm) {
@@ -44,16 +44,17 @@ function toggleForm(displayedForm, disabledForm) {
 }
 
 
-// //
+// Medicine cart functionality //
 
-const otcMedicine = document.querySelectorAll(".otc-input");
+
+const otcMedicine = document.querySelectorAll(".otc-category input");
 const cartTableBody = document.querySelector('#cart-table tbody');
 const totalPrice = document.querySelector('#total-price');
 
 otcMedicine.forEach(function (input) 
 {
     input.addEventListener("input", applyToCart.bind(null, input));
-})
+});
 
 function applyToCart(input) {
     let name = input.dataset.name;
@@ -95,7 +96,9 @@ function updateCart() {
     totalPrice.textContent = `Rs ${total.toLocaleString('en-US', {minimumFractionDigits:2})}`;
 }
 
-// //
+
+// Buying medicine functionality  //
+
 
 let buyBtn = buttons[0];
 let clearBtn = buttons[1];
@@ -141,7 +144,7 @@ function clearCart() {
     updateCart();
 }
 
-// // 
+// Saving and loading order functionality // 
 
 let saveOrderBtn = favButtons[0];
 let loadOrderBtn = favButtons[1];

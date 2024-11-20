@@ -30,7 +30,8 @@ function registerAccount()
         "contact"   : telNumber.value.trim(),
         "birthDate" : dob.value,
         "gender"    : gender.value,
-        "address"   : address.value.trim()
+        "address"   : address.value.trim(),
+        "savedOrder": undefined
     }
     // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
     const accountDuration = 1000 * 60 * 2; //2 minutes

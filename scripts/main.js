@@ -1,5 +1,7 @@
 // Sticky navigation bar only for desktop view
-if (screen.width > 880 && window.innerWidth > 880)
+const MOBILE_SCREEN_SIZE = screen.width > 880 && window.innerWidth > 880; 
+
+if (MOBILE_SCREEN_SIZE)
 {
     const navbar = document.querySelector("nav");
     const logo = document.getElementById("logo");

@@ -84,7 +84,6 @@ function applyToCart(input) {
 function updateCart() {
     cartTableBody.textContent = '';
     let total = 0;
-
     cart.forEach(function (item) {
         let row = document.createElement('tr');
         row.innerHTML = `
@@ -92,7 +91,7 @@ function updateCart() {
             cartTableBody.appendChild(row);
             total += item.price * item.quantity;
         }
-    );
+    )
     totalPrice.textContent = `Rs ${total.toLocaleString('en-US', {minimumFractionDigits:2})}`;
 }
 
@@ -153,30 +152,40 @@ saveOrderBtn.addEventListener("click", saveOrderToAccount);
 loadOrderBtn.addEventListener("click", loadOrderFromAccount);
 
 function saveOrderToAccount() {
-    let emptyCart = cart.length == 0;
-    if (emptyCart) {
-        alert("Cannot save an empty cart. Please select some medicine.");
-        return;
+    if ( isLoggedIn() ) {
+        let emptyCart = cart.length == 0;
+
+        if (emptyCart) {
+            alert("Cannot save an empty cart. Please select some medicine.");
+            return;
+        }
+        CURRENT_LOGIN.accountInfo.savedOrder = cart;
+        localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
+        alert("Order saved to account!");
     }
-    localStorage.setItem("SavedOrder", JSON.stringify(cart));
-    alert("Order saved to account!");
 }
 
 function loadOrderFromAccount() {
-    clearCart();
-    if ( !validateSavedOrder() ) {
-        return;
+    if ( isLoggedIn() ) {
+        clearCart();
+        if ( !validateSavedOrder() ) { return; }
+        cart = CURRENT_LOGIN.accountInfo.savedOrder;
+        updateCart();
+        alert("Order has been loaded successfully.");
     }
-    cart = JSON.parse(localStorage.getItem("SavedOrder"));
-    updateCart();
-    alert("Order has been loaded successfully.")
 
     function validateSavedOrder() {
-        let emptySavedOrder = localStorage.getItem("SavedOrder") === null;
+        let emptySavedOrder = CURRENT_LOGIN.accountInfo.savedOrder == undefined;
         if (emptySavedOrder) {
             alert("There is no saved order to load.");
-            return false``
+            return false;
         }
         return true;
     }
+}
+
+function isLoggedIn() {
+    if ( USER_HAS_LOGGED_IN ) { return true; }
+    alert("You need to be logged into an account in order to use this feature.");
+    return false;
 }

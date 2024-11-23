@@ -116,7 +116,7 @@ function buyMedicine() {
 
     function saveOrderToSession(OrderType, order) {
         sessionStorage.setItem(OrderType, JSON.stringify(order));
-        location.href("./checkout.html");
+        location.href = "./checkout.html";
     }
     function buyPrescriptionMedicine() {
         let prescription = document.getElementById('prescription');

@@ -35,7 +35,8 @@ function loginToAccount()
             "expirationDate": TIME_NOW + accountDuration
         }
         localStorage.setItem("CurrentLogin", JSON.stringify(CURRENT_LOGIN));
-        location.href = ".";
+        console.log(location.href);
+        // location.href = ".";
     } else {alert("Cannot Login. Make sure the account exists and check if Email or Password is correct.");}
 }
 

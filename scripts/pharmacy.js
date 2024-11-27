@@ -148,6 +148,7 @@ function clearCart() {
         input.value = '';
     });
     updateCart();
+    loadedOrder = false;
 }
 
 // Saving and loading order functionality // 
@@ -181,9 +182,8 @@ function loadOrderFromAccount() {
         loadedOrder = true;
         alert("Order has been loaded successfully.");
     } else if (loadedOrder) {
-        alert("Please clear the cart first and try again");
         clearCart();
-        loadedOrder = false;
+        alert("Please clear the cart first and try again");
     }
 
     function validateSavedOrder() {

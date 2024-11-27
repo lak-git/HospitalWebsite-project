@@ -8,6 +8,7 @@ const favBtnContainer = document.querySelector(".save-button-container");
 const cartTable = document.getElementById('cart');
 
 let isPrescription = false;
+let loadedOrder = false;
 let cart = [];
 
 prescriptionBtn.addEventListener("change", toggleForm.bind(null, prescriptionForm, otcForm));
@@ -51,10 +52,15 @@ const otcMedicine = document.querySelectorAll(".otc-category input");
 const cartTableBody = document.querySelector('#cart-table tbody');
 const totalPrice = document.querySelector('#total-price');
 
-otcMedicine.forEach(function (input) 
-{
-    input.addEventListener("input", applyToCart.bind(null, input));
-});
+addOTCMedicineToCart();
+
+function addOTCMedicineToCart() {
+    let medicine = document.querySelectorAll(".otc-category input");
+    medicine.forEach(function (input) 
+    {
+        input.addEventListener("input", applyToCart.bind(null, input));
+    });
+}
 
 function applyToCart(input) {
     let name = input.dataset.name;
@@ -137,9 +143,10 @@ function buyMedicine() {
 
 function clearCart() {
     cart = [];
-    otcMedicine.forEach(function (input) {
+    let medicine = document.querySelectorAll(".otc-category input");
+    medicine.forEach(function (input) {
         input.value = '';
-    })
+    });
     updateCart();
 }
 
@@ -152,7 +159,7 @@ saveOrderBtn.addEventListener("click", saveOrderToAccount);
 loadOrderBtn.addEventListener("click", loadOrderFromAccount);
 
 function saveOrderToAccount() {
-    if ( isLoggedIn() ) {
+    if ( isLoggedIn()) {
         let emptyCart = cart.length == 0;
 
         if (emptyCart) {
@@ -166,12 +173,16 @@ function saveOrderToAccount() {
 }
 
 function loadOrderFromAccount() {
-    if ( isLoggedIn() ) {
+    if ( isLoggedIn() && !loadedOrder ) {
         clearCart();
         if ( !validateSavedOrder() ) { return; }
         cart = CURRENT_LOGIN.accountInfo.savedOrder;
         updateCart();
+        loadedOrder = true;
         alert("Order has been loaded successfully.");
+    } else if (loadedOrder) {
+        alert("Please clear the cart first and try again");
+        clearCart();
     }
 
     function validateSavedOrder() {

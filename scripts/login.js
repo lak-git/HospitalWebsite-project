@@ -26,8 +26,7 @@ function loginToAccount()
     let validationValues = authenticateCredentials(submittedID, submittedPassword); 
     if ( validationValues[0] ) {
         // const accountDuration = 1000 * 60 * 60 * 2; // 2 hours
-        const accountDuration = 1000 * 60 * 2 // 2 minutes
-        // const TIME_NOW = new Date().getTime();
+        const accountDuration = 1000 * 60 * 5 // 5 minutes
 
         let CURRENT_LOGIN = {
             "accountID"     : validationValues[1], 

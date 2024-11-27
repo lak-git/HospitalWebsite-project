@@ -183,6 +183,7 @@ function loadOrderFromAccount() {
     } else if (loadedOrder) {
         alert("Please clear the cart first and try again");
         clearCart();
+        loadedOrder = false;
     }
 
     function validateSavedOrder() {

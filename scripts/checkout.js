@@ -67,27 +67,24 @@ orderBtn.addEventListener("click", orderMedicine);
 function orderMedicine() {
     event.preventDefault();
 
-    validateInputFields();
+    let fullName = document.getElementById('name');
+    let email = document.getElementById('email');
+    let contactNumber = document.getElementById('contact');
+    let dob = document.getElementById('dob');
+    let deliveryAddress = document.getElementById('address');
+    if ( !isValidInput(fullName, email, contactNumber, dob, deliveryAddress) ) {
+        alert("Please make sure your personal details are correct.");
+        return;
+    }
+    if ( !isValidInput(cardNumber, zipCode, pinNumber)) {
+        alert("Please make sure your payment details are correct.");
+        return;
+    }
+    
     printOrderAcknowledgement();
     clearPendingOrder();
-    
     location.replace(".");
 
-    function validateInputFields() {
-        let fullName = document.getElementById('name');
-        let email = document.getElementById('email');
-        let contactNumber = document.getElementById('contact');
-        let dob = document.getElementById('dob');
-        let deliveryAddress = document.getElementById('address');
-        if ( !isValidInput(fullName, email, contactNumber, dob, deliveryAddress) ) {
-            alert("Please make sure your personal details are correct.");
-            return;
-        }
-        if ( !isValidInput(cardNumber, zipCode, pinNumber)) {
-            alert("Please make sure your payment details are correct.");
-            return;
-        }
-    }
     function printOrderAcknowledgement() {
         let orderDate = new Date();
         const FIVE_DAYS = 1000*60*60*24*5;

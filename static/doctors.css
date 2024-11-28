@@ -1,4 +1,4 @@
-section[name="doctors-grid"] {
+section.doctors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 
@@ -68,7 +68,7 @@ section[name="doctors-grid"] {
 
 /* For Tablets and Mobile Phones */
 @media screen and (max-width:630px) {
-    section[name="doctors-grid"] {
+    section.doctors-grid {
         grid-template-columns: repeat(auto-fit, minmax(40vw, 1fr));
         gap: 10px;
     }

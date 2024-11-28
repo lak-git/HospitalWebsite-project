@@ -1,4 +1,4 @@
-section[name="services-list"]{
+.services-list{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

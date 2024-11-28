@@ -70,7 +70,7 @@
 </header>    
 
 <main>
-    <section name="pharmacy-intro">
+    <section>
         <h1>Order Medicine</h1>
         <p>If you are interested in ordering medicine from the Hospital Pharmacy, please complete the form below to place your order</p>
     </section>
@@ -80,24 +80,23 @@
         <form action="#" method="post">
             <fieldset>
                 <legend class="title"><h2>Select Medicine Type</h2></legend>
-                <label for="medicine-type"></label> 
                     <label for="prescription" class="inline">
-                        <input type="radio" name="medicine-type" id="prescription">Prescription Medicine</label>
+                        <input type="radio" id="prescription">Prescription Medicine</label>
                     <label for="otc" class="inline">
-                        <input type="radio" name="medicine-type" id="otc">Over The Counter (OTC)</label>
+                        <input type="radio" id="otc">Over The Counter (OTC)</label>
             </fieldset>
             <fieldset id="prescription-form">
                 <legend><h2>Prescription Information</h2></legend>
 
-                <label for="prescription">Upload Prescription:</label>
-                    <input type="file" name="prescription" id="prescription">
+                <label for="prescription-file">Upload Prescription:</label>
+                    <input type="file" name="prescription-file" id="prescription-file">
 
                 <label for="prescription-date">Prescription Date:</label>
                     <input type="date" name="prescription-date" id="prescription-date" required>
 
                 <label for="doctor">Doctor's Name:</label>
                     <select name="doctor" id="doctor" required>
-                        <option value=""> </option>
+                        <option value="" label="Select"> </option>
                         <option value="id1_st">Dr. Sarah Thompson</option>
                         <option value="id2_js">Dr. John Smith</option>
                         <option value="id3_ed">Dr. Emily Davis</option>
@@ -106,10 +105,10 @@
             </fieldset>
         </form>
         <section id="otc-form">
-            <legend><h2></h2></legend>
+            <br>
             <div class="otc-category">
                 <h2>Analgesics</h2>
-                <ul id="analgesics" class="dropdown">
+                <ul class="dropdown">
                     <li>
                         <label>Panadol
                         <input type="number" data-name="Panadol 10 tablets(500mg)" data-price="50" min="0"></label>
@@ -138,7 +137,7 @@
             </div>
             <div class="otc-category">
                 <h2>Antibiotics</h2>
-                <ul id="" class="dropdown">
+                <ul class="dropdown">
                     <li>
                         <label>Amoxil
                         <input type="number" data-name="Amoxil 10 capsules (500mg)" data-price="300" min="0"></label>
@@ -149,7 +148,7 @@
                     </li>
                     <li>
                         <label>Doxytab
-                        <input type="number" data-name="Doxytab 10 tablets (100mg)" data-price="300" min=" 0"></label>
+                        <input type="number" data-name="Doxytab 10 tablets (100mg)" data-price="300" min="0"></label>
                     </li>
                     <li>
                         <label>Metrogel
@@ -167,7 +166,7 @@
             </div>
             <div class="otc-category">
                 <h2>Antidepressants</h2>
-                <ul id="" class="dropdown">
+                <ul class="dropdown">
                     <li>
                         <label>Prozac
                         <input type="number" data-name="Prozac 10 capsules (20mg)" data-price="800" min="0"></label>
@@ -196,7 +195,7 @@
             </div>
             <div class="otc-category">
                 <h2>Antihypersensitives</h2>
-                <ul id="" class="dropdown">
+                <ul class="dropdown">
                     <li>
                         <label>Norvasc
                         <input type="number" data-name="Norvasc 10 tablets (5mg)" data-price="200" min="0"></label>
@@ -225,7 +224,7 @@
             </div>
             <div class="otc-category">
                 <h2>Antihistamines</h2>
-                <ul id="" class="dropdown">
+                <ul class="dropdown">
                     <li>
                         <label>Zyrtec
                         <input type="number" data-name="Zyrtec 10 tablets (10mg)" data-price="200" min="0"></label>

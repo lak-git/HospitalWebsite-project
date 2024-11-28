@@ -1,4 +1,4 @@
-label[for="consultation-type"]{margin: 15px 0;}
+#consultation-type{margin: 15px 0;}
 
 label.inline{
     display: inline;

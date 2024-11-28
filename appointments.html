@@ -69,12 +69,12 @@
 </header>    
 
 <main>
-    <section name="appointments-intro">
+    <section>
         <h1>Book Your Appointment</h1>
         <p>Scheduling your consultation at Colebrooke Hospital is simple and convenient. Whether you need to see a specialist, follow up on treatment, or require general medical advice, our online appointment system ensures you can secure your preferred time with ease. Please fill out the form below with your details, and one of our team members will confirm your appointment shortly. Your health is our priority, and we are here to provide the care and attention you deserve at a time that suits you.</p>
     </section>
 
-    <section name="appointment-form" class="form-container">
+    <section class="form-container">
         <form action="#" method="post"> 
             <!-- Form for patient's personal information -->
             <fieldset>
@@ -106,7 +106,7 @@
 
                 <label for="specialty">Doctor's Specialty:</label>
                 <select name="specialty" id="specialty" required>
-                    <option value=""></option>
+                    <option value="" label="Select"></option>
                     <option value="Cardiologist">Cardiologist</option>
                     <option value="Pediatrician">Pediatrician</option>
                     <option value="Orthopedist">Orthopedist</option>
@@ -115,7 +115,7 @@
                 
                 <label for="doctor">Doctor:</label>
                 <select name="doctor" id="doctor" required>
-                    <option value=""></option>
+                    <option value="" label="Select"></option>
                     <option value="id1_st">Dr. Sarah Thompson</option>
                     <option value="id2_js">Dr. John Smith</option>
                     <option value="id3_ed">Dr. Emily Davis</option>
@@ -125,11 +125,11 @@
                 <label for="date-time">Date and Time:</label>
                     <input type="datetime-local" name="date-time" id="date-time" required>
 
-                <label for="consultation-type">Consultation Type: </label> 
+                <label id="consultation-type">Consultation Type: </label> 
                     <label for="in-person" class="inline">
-                        <input type="radio" name="consultation-type" id="in-person">In Person</label>
+                        <input type="radio" id="in-person">In Person</label>
                     <label for="virtual" class="inline">
-                        <input type="radio" name="consultation-type" id="virtual">Virtual</label>
+                        <input type="radio" id="virtual">Virtual</label>
                         
                 <label for="reason">Reason for Consultation:</label>
                     <textarea id="reason" name="reason" rows="3" required></textarea>  
@@ -141,7 +141,7 @@
         </form>
     </section>
 
-    <section name="info">
+    <section>
         <h2>Important Information</h2>
         <ul>
             <li>You will recive a confirmation email and/or SMS once your reservation is successfully submitted.</li>
@@ -155,12 +155,11 @@
     <div class="footer-container">
         <div class="footer-inner">
             <div class="footer-box">
-                <p id="contact">Contact Details:</p>
+                <p id="contact-details">Contact Details:</p>
                 <p>7 Alfred Road, <br>
                     Colebrooke Avenue, <br>
                     Colombo 07.
                     <div class="tel">011 433 2200</div>
-                </p>
             </div>
             <div class="footer-box underline-effect">
                 <a href="appointments.html">Get an Appointment</a>

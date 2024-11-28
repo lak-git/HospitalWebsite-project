@@ -76,7 +76,7 @@
         <h1>Checkout</h1>
         <p>Please confirm your order and proceed with entering your Payment & Personal Details</p>
     </section>
-    <section name="checkout-form" class="form-container">
+    <section class="form-container">
         <form action="#" method="post">
             <fieldset>
                 <legend><h2>Personal Details</h2></legend>
@@ -99,11 +99,11 @@
                 <label for="address">Delivery Address:</label>
                     <textarea id="address" name="address" rows="2" required></textarea>
 
-                <label for="payment-type">Select Payment Option:</label>
+                <label>Select Payment Option:</label>
                     <label for="cash" class="inline">
-                        <input type="radio" name="payment-type" id="cash" required>Cash</label>
+                        <input type="radio" id="cash" required>Cash</label>
                     <label for="card" class="inline">
-                        <input type="radio" name="payment-type" id="card" required>Card</label>
+                        <input type="radio" id="card" required>Card</label>
                 
                 <div id="card-form">
                     <label for="card-number">Card Number:
@@ -120,7 +120,7 @@
             </div>
         </form>
     </section>
-    <div id="cart" role="table">
+    <div id="cart">
         <h2>Your Order</h2>
         <table id="cart-table">
             <thead>
@@ -136,7 +136,7 @@
             </tfoot>
         </table>
     </div>
-    <section name="info">
+    <section>
         <h2>Important Information</h2>
         <ul>
             <li>Medicines will be delivered to your specified address within the stipulated delivery time.</li>

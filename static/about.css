@@ -150,7 +150,7 @@ tfoot td {
         display: block;
         width: 40vw;
     }
-    td[name="services"]{
+    td.services{
         text-align: center;
         width: 100%;
         margin-bottom: 3vh;

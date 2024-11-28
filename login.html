@@ -70,13 +70,14 @@
 </header>    
 
 <main>
-    <section name="login-intro">
-        <h1>Log In</h1>
+    <section>
+        <h1>Log In Page</h1>
         <p>Here, you can securely access your personal account to manage your appointments, view medical records, and update your contact information. If you're a new user, feel free to sign up to get started.</p>
     </section>
-    <section name="login-form" class="form-container">
+    <div class="form-container">
         <form action="#">
             <fieldset>
+                <legend>Log In to Account</legend>
                 <label for="email">Email Address:</label>
                     <input type="email" id="email" name="email" required>
 
@@ -89,7 +90,8 @@
             <div class="button-container">
                 <button class="full" type="submit" id="login">Log In</button>
             </div>
-    </section>
+        </form>
+    </div>
 </main>
 
 <footer>

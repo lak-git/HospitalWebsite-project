@@ -11,6 +11,7 @@ let isPrescription = false;
 let loadedOrder = false;
 let cart = [];
 
+// Show form fields depending on which radio button is selected
 prescriptionBtn.addEventListener("change", toggleForm.bind(null, prescriptionForm, otcForm));
 otcBtn.addEventListener("change", toggleForm.bind(null, otcForm, prescriptionForm));
 
@@ -47,7 +48,7 @@ function toggleForm(displayedForm, disabledForm) {
 
 // Medicine cart functionality //
 
-
+// All medicine input fields and cart
 const otcMedicine = document.querySelectorAll(".otc-category input");
 const cartTableBody = document.querySelector('#cart-table tbody');
 const totalPrice = document.querySelector('#total-price');
@@ -86,7 +87,7 @@ function applyToCart(input) {
 
     updateCart();
 }
-
+// Clears existing cart rows first and then iterates through cart list and those rows
 function updateCart() {
     cartTableBody.textContent = '';
     let total = 0;

@@ -28,7 +28,7 @@ function showCardForm(condition) {
         button.style.display = "block";
     })
 }
-
+// Display the cart and the order in checkout page
 function displayCart() {
     if (isPrescription) {
         let cartSection = document.getElementById('cart');

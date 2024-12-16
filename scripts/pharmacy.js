@@ -112,6 +112,7 @@ let clearBtn = buttons[1];
 buyBtn.addEventListener("click", buyMedicine);
 clearBtn.addEventListener("click", clearCart);
 
+// Buy medicine and proceed to checkout depending selected medicine type
 function buyMedicine() {
     if (isPrescription) {
         buyPrescriptionMedicine();
@@ -160,6 +161,7 @@ let loadOrderBtn = favButtons[1];
 saveOrderBtn.addEventListener("click", saveOrderToAccount);
 loadOrderBtn.addEventListener("click", loadOrderFromAccount);
 
+// Save order to account only if user is logged in
 function saveOrderToAccount() {
     if ( isLoggedIn()) {
         let emptyCart = cart.length == 0;
@@ -174,6 +176,7 @@ function saveOrderToAccount() {
     }
 }
 
+// Load order only if user is logged in and there's a saved order
 function loadOrderFromAccount() {
     if ( isLoggedIn() && !loadedOrder ) {
         clearCart();

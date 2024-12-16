@@ -7,6 +7,7 @@ let zipCode = document.getElementById('zipcode');
 let pinNumber = document.getElementById('pin');
 let isPrescription = JSON.parse(sessionStorage.getItem("PrescriptionOrder"));
 
+// Show form fields depending on which radio button is selected
 cardBtn.addEventListener("click", showCardForm.bind(null, true));
 cashBtn.addEventListener("click", showCardForm.bind(null, false));
 displayCart();
@@ -27,7 +28,7 @@ function showCardForm(condition) {
         button.style.display = "block";
     })
 }
-
+// Display the cart and the order in checkout page
 function displayCart() {
     if (isPrescription) {
         let cartSection = document.getElementById('cart');

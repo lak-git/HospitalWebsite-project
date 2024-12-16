@@ -1,3 +1,4 @@
+// JS to autofill form fields if a user is logged in
 if (USER_HAS_LOGGED_IN) 
 {
     function fillName(){
